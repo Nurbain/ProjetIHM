@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>Sprite/attente.png</file>
+        <file>Sprite/chevron.png</file>
+        <file>Sprite/Muet.png</file>
+        <file>Sprite/Musique.png</file>
+        <file>Sprite/Next.png</file>
+        <file>Sprite/pause.png</file>
+        <file>Sprite/Play.png</file>
+        <file>Sprite/playlist.png</file>
+        <file>Sprite/plus.png</file>
+        <file>Sprite/Radio.png</file>
+        <file>Sprite/Rapide.jpeg</file>
+        <file>Sprite/settings.png</file>
+        <file>Sprite/VolumeFull.png</file>
+        <file>Sprite/vue.png</file>
+    </qresource>
+</RCC>

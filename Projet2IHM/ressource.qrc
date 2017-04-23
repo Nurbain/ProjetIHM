@@ -11,7 +11,6 @@
         <file>Sprite/plus.png</file>
         <file>Sprite/Radio.png</file>
         <file>Sprite/Rapide.jpeg</file>
-        <file>Sprite/settings.png</file>
         <file>Sprite/VolumeFull.png</file>
         <file>Sprite/vue.png</file>
         <file>Sprite/PlayMenu.png</file>
@@ -19,5 +18,11 @@
         <file>Sprite/attenteMenu.png</file>
         <file>Sprite/vueMenu.png</file>
         <file>Sprite/RadioMenu.png</file>
+        <file>Sprite/RapideAvant.png</file>
+        <file>Sprite/RapideDerriere.png</file>
+        <file>Sprite/settings.png</file>
+        <file>Sprite/Drapeau-anglais.png</file>
+        <file>Sprite/drapeau-francais.png</file>
+        <file>Sprite/espagnole.png</file>
     </qresource>
 </RCC>

@@ -32,3 +32,11 @@ FORMS    += mainwindow.ui
 
 RESOURCES += \
     ressource.qrc
+
+DISTFILES += \
+    Sprite/RapideAvant.png \
+    Sprite/RapideDerriere.png \
+    Sprite/VolumeBas.png \
+    Sprite/Drapeau-anglais.png \
+    Sprite/drapeau-francais.png \
+    Sprite/espagnole.png

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>946</width>
-    <height>473</height>
+    <width>838</width>
+    <height>472</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,12 +20,12 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <widget class="QStackedWidget" name="stackedWidget">
+   <widget class="QStackedWidget" name="TabInteraction">
     <property name="geometry">
      <rect>
       <x>240</x>
       <y>110</y>
-      <width>711</width>
+      <width>601</width>
       <height>311</height>
      </rect>
     </property>
@@ -33,12 +33,260 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>3</number>
     </property>
-    <widget class="QWidget" name="page_3"/>
-    <widget class="QWidget" name="page_4"/>
+    <widget class="QWidget" name="Tab_Musique"/>
+    <widget class="QWidget" name="Tab_Radio"/>
+    <widget class="QWidget" name="Tab_Serveur"/>
+    <widget class="QWidget" name="Tab_Parametre">
+     <widget class="QLabel" name="Param_Icon">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="ressource.qrc">:/icon/Sprite/settings.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Param_Eng">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>20</y>
+        <width>41</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border : none ;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="ressource.qrc">
+        <normaloff>:/icon/Sprite/Drapeau-anglais.png</normaloff>:/icon/Sprite/Drapeau-anglais.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Param_Esp">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>20</y>
+        <width>41</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border : none ;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="ressource.qrc">
+        <normaloff>:/icon/Sprite/espagnole.png</normaloff>:/icon/Sprite/espagnole.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>40</width>
+        <height>40</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Param_Fr">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>20</y>
+        <width>41</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+border : none ;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="ressource.qrc">
+        <normaloff>:/icon/Sprite/drapeau-francais.png</normaloff>:/icon/Sprite/drapeau-francais.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>45</width>
+        <height>45</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Param_Serveur">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>150</y>
+        <width>91</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(130, 130, 130);</string>
+      </property>
+      <property name="text">
+       <string>Enceinte</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Param_Langue">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>33</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(130, 130, 130);</string>
+      </property>
+      <property name="text">
+       <string>Langue</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line1">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>90</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Param_other">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>250</y>
+        <width>151</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(130, 130, 130);</string>
+      </property>
+      <property name="text">
+       <string>Haute Qualité</string>
+      </property>
+     </widget>
+     <widget class="Line" name="line2">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>200</y>
+        <width>181</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="Param_On">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>150</y>
+        <width>82</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>On</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="Param_Off">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>150</y>
+        <width>82</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Off</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="Param_CheckHD">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>253</y>
+        <width>21</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Tab_PlayList">
+     <zorder>Ligne</zorder>
+    </widget>
+    <widget class="QWidget" name="Tab_Attente"/>
    </widget>
-   <widget class="QPushButton" name="evilButton">
+   <widget class="QPushButton" name="BtnMenu_Music">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -102,7 +350,7 @@ color: rgb(255, 255, 255);
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="evilButton_2">
+   <widget class="QPushButton" name="BtnMenu_Play">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -160,7 +408,7 @@ color: rgb(255, 255, 255);
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="evilButton_3">
+   <widget class="QPushButton" name="BtnMenu_Attente">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -218,7 +466,7 @@ color: rgb(255, 255, 255);
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="evilButton_4">
+   <widget class="QPushButton" name="BtnMenu_Radio">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -276,7 +524,7 @@ color: rgb(255, 255, 255);
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="evilButton_5">
+   <widget class="QPushButton" name="BtnMenu_serveur">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -321,7 +569,7 @@ color: rgb(255, 255, 255);
 </string>
     </property>
     <property name="text">
-     <string>Serveur</string>
+     <string>Enceinte</string>
     </property>
     <property name="icon">
      <iconset resource="ressource.qrc">
@@ -334,7 +582,7 @@ color: rgb(255, 255, 255);
      </size>
     </property>
    </widget>
-   <widget class="QPushButton" name="evilButton_6">
+   <widget class="QPushButton" name="BtnMenu_Param">
     <property name="enabled">
      <bool>true</bool>
     </property>
@@ -382,12 +630,12 @@ color: rgb(255, 255, 255);
      <string>Paramètre</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
+   <widget class="QGroupBox" name="Player">
     <property name="geometry">
      <rect>
       <x>240</x>
       <y>0</y>
-      <width>711</width>
+      <width>601</width>
       <height>111</height>
      </rect>
     </property>
@@ -397,19 +645,379 @@ color: rgb(255, 255, 255);
     <property name="title">
      <string/>
     </property>
-   </widget>
-   <widget class="Line" name="line">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>100</y>
-      <width>711</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
+    <widget class="QPushButton" name="Player_Play">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border : none ;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="ressource.qrc">
+       <normaloff>:/icon/Sprite/Play.png</normaloff>:/icon/Sprite/Play.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>50</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Player_Pause">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>10</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border : none ;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="ressource.qrc">
+       <normaloff>:/icon/Sprite/pause.png</normaloff>:/icon/Sprite/pause.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>50</width>
+       <height>50</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Player_Avance">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>60</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border : none ;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="ressource.qrc">
+       <normaloff>:/icon/Sprite/RapideAvant.png</normaloff>:/icon/Sprite/RapideAvant.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Player_recule">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border : none ;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="ressource.qrc">
+       <normaloff>:/icon/Sprite/RapideDerriere.png</normaloff>:/icon/Sprite/RapideDerriere.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="Player_ProgressBar">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>361</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar {
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+QProgressBar::chunk{
+	background-color: rgb(154, 154, 154);
+}
+</string>
+     </property>
+     <property name="value">
+      <number>75</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Player_Artiste">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Artiste</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Player_seg">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>20</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>-</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Player_Album">
+     <property name="geometry">
+      <rect>
+       <x>240</x>
+       <y>20</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Album</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Player_Chanson">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>0</y>
+       <width>161</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Nom Chanson</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Player_MaxVol">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>70</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border : none ;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="ressource.qrc">
+       <normaloff>:/icon/Sprite/VolumeFull.png</normaloff>:/icon/Sprite/VolumeFull.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Player_Muet">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>70</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border : none ;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="ressource.qrc">
+       <normaloff>:/icon/Sprite/Muet.png</normaloff>:/icon/Sprite/Muet.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Player_MinVol">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>204</x>
+       <y>70</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+border : none ;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>Sprite/VolumeBas.png</normaloff>Sprite/VolumeBas.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QSlider" name="Player_Volume">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>66</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider::groove:horizontal {
+background-color:rgb(167, 167, 167);
+height : 2px;
+}
+
+QSlider::handle { 
+	background :rgb(200, 200, 200);
+	width: 10px;
+	margin : -5px 0;
+	border : 1px solid gray ;
+	border-radius : 6px;
+}
+
+</string>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Player_Next">
+     <property name="geometry">
+      <rect>
+       <x>550</x>
+       <y>35</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="ressource.qrc">:/icon/Sprite/Next.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Player_Nextmusic">
+     <property name="geometry">
+      <rect>
+       <x>530</x>
+       <y>10</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Next musique</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Player_Temps">
+     <property name="geometry">
+      <rect>
+       <x>450</x>
+       <y>20</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1.09/3.05</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>100</y>
+       <width>601</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -417,7 +1025,7 @@ color: rgb(255, 255, 255);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>946</width>
+     <width>838</width>
      <height>21</height>
     </rect>
    </property>

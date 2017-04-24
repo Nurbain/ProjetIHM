@@ -28,6 +28,14 @@ private slots:
 
     void on_BtnMenu_Play_clicked();
 
+    void on_Player_Pause_clicked();
+
+    void on_Player_Play_clicked();
+
+    void on_Player_MinVol_clicked();
+
+    void on_Player_Muet_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

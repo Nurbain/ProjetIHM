@@ -28,5 +28,6 @@
         <file>Sprite/chevronD.png</file>
         <file>Sprite/chevronWd.png</file>
         <file>Sprite/chevronWg.png</file>
+        <file>Sprite/VolumeBas.png</file>
     </qresource>
 </RCC>

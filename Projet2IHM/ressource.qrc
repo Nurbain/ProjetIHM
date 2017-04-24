@@ -24,5 +24,9 @@
         <file>Sprite/Drapeau-anglais.png</file>
         <file>Sprite/drapeau-francais.png</file>
         <file>Sprite/espagnole.png</file>
+        <file>Sprite/img_fjords.jpg</file>
+        <file>Sprite/chevronD.png</file>
+        <file>Sprite/chevronWd.png</file>
+        <file>Sprite/chevronWg.png</file>
     </qresource>
 </RCC>

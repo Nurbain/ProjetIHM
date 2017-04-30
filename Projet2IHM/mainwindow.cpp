@@ -1,3 +1,8 @@
+/* Urbain Nathan & Quentin Wendlig
+ * L3S6 CMI Image
+ * Projet 2 IHM
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 

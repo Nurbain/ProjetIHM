@@ -31,3 +31,6 @@ HEADERS  += mainwindow.h \
     sendjsoncommand.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    ressource.qrc

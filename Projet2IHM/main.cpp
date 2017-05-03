@@ -22,9 +22,9 @@ int main(int argc, char *argv[])
     qDebug() << "Morceau lancé !";
 
     // Test du changement de volume
-    test->changeVolumeOnMPV(50);
+    //test->changeVolumeOnMPV(50);
 
-    test->quitMPVServer();
+    //test->quitMPVServer();
 
     return a.exec();
 }

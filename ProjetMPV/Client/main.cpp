@@ -6,6 +6,7 @@
 
 #include "mainwindow.h"
 #include "sendjsoncommand.h"
+#include "client.h"
 #include <QDebug>
 #include <QApplication>
 
@@ -15,16 +16,14 @@ int main(int argc, char *argv[])
     MainWindow w;
     w.show();
 
-    SendJSONCommand *test = new SendJSONCommand();
+    Client c;
 
-    // Test du changement de morceau
-    test->changeMusicOnMPV("test.mp3");
-    qDebug() << "Morceau lancé !";
+    QVariantMap params;
 
-    // Test du changement de volume
-    //test->changeVolumeOnMPV(50);
+    params[kParamSwitch]=QVariant(true);
 
-    //test->quitMPVServer();
+    c.messageFromUI(kSignalConnectToServer,params);
+
 
     return a.exec();
 }

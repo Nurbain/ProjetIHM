@@ -25,10 +25,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    sendjsoncommand.cpp
+    sendjsoncommand.cpp \
+    serveur.cpp \
+    ../../Common/common.cpp
 
 HEADERS  += mainwindow.h \
-    sendjsoncommand.h
+    sendjsoncommand.h \
+    serveur.h \
+    ../../Common/common.h
 
 FORMS    += mainwindow.ui
 

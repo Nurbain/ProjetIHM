@@ -5,6 +5,7 @@
 #include <QLocalServer>
 #include <QLocalSocket>
 #include <QtConcurrent/QtConcurrent>
+#include "sendjsoncommand.h"
 #include "../../Common/common.h"
 
 
@@ -21,6 +22,7 @@ private:
     void clientMessageLoop();
     bool m_running;
     QFuture<void> m_serverLoopThread;
+    SendJSONCommand *mpv_json;
 
 signals:
     void signalFromServer(signalType, QVariantMap);

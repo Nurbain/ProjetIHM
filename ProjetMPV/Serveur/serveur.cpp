@@ -10,6 +10,7 @@ Serveur::Serveur(QObject *parent) :
     m_server(new QLocalServer(this))
 {
     qRegisterMetaType<signalType>("signalType");
+    mpv_json = new SendJSONCommand();
     m_running=true;
     m_serverLoopThread=QtConcurrent::run(this, &Serveur::clientMessageLoop);
 }
@@ -31,6 +32,8 @@ void Serveur::startServer(bool on){
             return;
         }
         else{
+            mpv_json->changeMusicOnMPV("test.mp3");
+            qDebug() << "Morceau lancé !";
             QVariantMap params;
             params[kParamSwitch]=QVariant(true);
             params[kParamStatus]=QVariant(kStatusStarted);

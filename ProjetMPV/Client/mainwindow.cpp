@@ -80,15 +80,16 @@ void MainWindow::RecuperationMusique ()
         nomFichier << file.fileName();
         qDebug() << file.fileName();
 
-        QPushButton *newbtn = new QPushButton (file.fileName(), ui->Tab_Musique);
-        QString nom = newbtn->text();
+        QString nom = file.fileName();
+        nom.resize(nom.size()-4);
+        QPushButton *newbtn = new QPushButton (nom, ui->Tab_Musique);
+        newbtn->text() = nom;
         QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Music_clicked()));
         newbtn->setGeometry(x,y,461,25);
 
         y = y+30;
     }
 
-    qDebug() << "la2";
     QDir dir_path(Dir);
     dir_path.setFilter((QDir::AllDirs));
     QStringList Alldir = dir_path.entryList();
@@ -111,8 +112,9 @@ void MainWindow::RecuperationMusique ()
                 yDir = yDir+20;
                 QFileInfo file(dirIterator2.next());
                 QLabel *titre  =new QLabel(file.fileName() , ui->Tab_PlayList);
-                titre->setText("- "+file.fileName());
-                qDebug() << titre->text();
+                QString nom = file.fileName();
+                nom.resize(nom.size()-4);
+                titre->setText("- "+nom);
                 titre->setGeometry(xDir+30,yDir , largeDir+200 , hauteurDir);
 
 
@@ -130,9 +132,9 @@ void MainWindow::Music_clicked()
 {
     QObject * emetteur = sender();
     QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
-    qDebug() << cast->text();;
+    QString nom = cast->text() + ".mp3";
     QVariantMap params;
-    params[kParamNomMusique]=cast->text();
+    params[kParamNomMusique]=nom;
     emit signalFromUI(kSignalChangementMusique, params);
 }
 

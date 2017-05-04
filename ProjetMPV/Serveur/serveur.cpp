@@ -65,9 +65,12 @@ void Serveur::connectionFromClient(){
     if(m_client) return; //Un seul client faudra changer ca
     m_client=m_server->nextPendingConnection();
     QVariantMap params;
+    qDebug("Conneton client");
     params[kParamMessage]=QVariant("Client connecté");
     params[kParamStatus]=QVariant(kStatusMessage);
     emit signalFromServer(kSignalStatusMessage,params);
+    params[kParamSwitch]=QVariant(true);
+    emit signalFromServer(kSignalStart,params);
     connect(m_client, SIGNAL(disconnected()),m_client,SLOT(deleteLater()));
     connect(m_client,SIGNAL(disconnected()),this,SLOT(clientDisconnected()));
 }
@@ -96,5 +99,6 @@ void Serveur::clientMessageLoop() {
         QJsonParseError error;
         QJsonDocument jDoc=QJsonDocument::fromJson(a,&error);
         QJsonObject jsonObject=jDoc.object();
+        emit signalFromServer((signalType)jsonObject[kJsonSignal].toInt(), jsonObject[kJsonParams].toObject().toVariantMap());
     }
 }

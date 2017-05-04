@@ -27,12 +27,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     sendjsoncommand.cpp \
     serveur.cpp \
-    ../../Common/common.cpp
+    ../../Common/common.cpp \
+    automate.cpp
 
 HEADERS  += mainwindow.h \
     sendjsoncommand.h \
     serveur.h \
-    ../../Common/common.h
+    ../../Common/common.h \
+    automate.h
 
 FORMS    += mainwindow.ui
 

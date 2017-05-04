@@ -7,6 +7,7 @@ extern const char kParams[];
 extern const char kParamSwitch[];
 extern const char kParamStatus[];
 extern const char kParamMessage[];
+extern const char kParamNomMusique[];
 
 extern const char kJsonSignal[];
 extern const char kJsonParams[];

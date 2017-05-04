@@ -4,6 +4,7 @@
 #include <QDir>
 #include <QPushButton>
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -97,7 +98,76 @@ void MainWindow::on_Player_Play_clicked()
     emit signalFromUI(kSignalPause, params);
 }
 
-void MainWindow::on_Player_Avance_clicked()
+void MainWindow::on_Param_Eng_clicked()
 {
+    //Menu
+    ui->BtnMenu_Music->setText("Music");
+    ui->BtnMenu_Play->setText("PlayList");
+    ui->BtnMenu_Radio->setText("Radio");
+    ui->BtnMenu_Attente->setText("Waiting");
+    ui->BtnMenu_serveur->setText("Server");
+    ui->BtnMenu_Param->setText("Settings");
+    ui->Param_other->setText("high quality");
+    ui->Param_Serveur->setText("Server");
+    ui->Param_Langue->setText("Language");
+}
 
+void MainWindow::on_Param_Fr_clicked()
+{
+    //Menu
+    ui->BtnMenu_Music->setText("Musique");
+    ui->BtnMenu_Play->setText("PlayList");
+    ui->BtnMenu_Radio->setText("Radio");
+    ui->BtnMenu_Attente->setText("Attente");
+    ui->BtnMenu_serveur->setText("Serveur");
+    ui->BtnMenu_Param->setText("Parametre");
+    ui->Param_other->setText("Haute qualité");
+    ui->Param_Serveur->setText("Serveur");
+    ui->Param_Langue->setText("Langue");
+}
+
+void MainWindow::on_BtnMenu_Music_clicked()
+{
+    ui->TabInteraction->setCurrentIndex(0);
+}
+
+void MainWindow::on_BtnMenu_Play_clicked()
+{
+    ui->TabInteraction->setCurrentIndex(4);
+}
+
+void MainWindow::on_BtnMenu_Attente_clicked()
+{
+    ui->TabInteraction->setCurrentIndex(5);
+}
+
+
+void MainWindow::on_BtnMenu_Radio_clicked()
+{
+     ui->TabInteraction->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_BtnMenu_serveur_clicked()
+{
+     ui->TabInteraction->setCurrentIndex(2);
+}
+
+void MainWindow::on_BtnMenu_Param_clicked()
+{
+     ui->TabInteraction->setCurrentIndex(3);
+}
+
+void MainWindow::on_Player_Volume_valueChanged(int value)
+{
+    QVariantMap params;
+    params[kParamVolume]=value;
+    emit signalFromUI(kSignalChangementVolume, params);
+}
+
+void MainWindow::on_Player_Muet_clicked()
+{
+    QVariantMap params;
+    params[kParamVolume]=0;
+    emit signalFromUI(kSignalChangementVolume, params);
 }

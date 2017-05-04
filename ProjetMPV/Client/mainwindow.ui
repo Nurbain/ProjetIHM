@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="Tab_Musique">
      <property name="styleSheet">
@@ -432,9 +432,9 @@ border : none ;</string>
      <widget class="QLabel" name="Param_Serveur">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>80</x>
         <y>150</y>
-        <width>91</width>
+        <width>151</width>
         <height>21</height>
        </rect>
       </property>
@@ -453,9 +453,9 @@ border : none ;</string>
      <widget class="QLabel" name="Param_Langue">
       <property name="geometry">
        <rect>
-        <x>140</x>
+        <x>90</x>
         <y>33</y>
-        <width>81</width>
+        <width>131</width>
         <height>31</height>
        </rect>
       </property>
@@ -487,10 +487,10 @@ border : none ;</string>
      <widget class="QLabel" name="Param_other">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>250</y>
+        <x>80</x>
+        <y>240</y>
         <width>151</width>
-        <height>21</height>
+        <height>31</height>
        </rect>
       </property>
       <property name="font">
@@ -1259,6 +1259,9 @@ QSlider::handle {
 }
 
 </string>
+     </property>
+     <property name="value">
+      <number>50</number>
      </property>
      <property name="orientation">
       <enum>Qt::Horizontal</enum>

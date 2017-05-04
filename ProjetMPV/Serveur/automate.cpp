@@ -66,6 +66,7 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             break;
         case kSignalChangementVolume:
             mpv_json->changeVolumeOnMPV(params[kParamVolume].toInt());
+            emit signalMachine(kSignalChangementVolume,params);
             break;
         case kSignalChangementPlaylist:
             qDebug("Ouais c'est bon c'est bind");
@@ -113,6 +114,7 @@ void Automate::readSocket(){
                     //qDebug() << (int)jObj["data"].toDouble();
                     params[kParamProgress]=QVariant((int)jObj["data"].toDouble());
                     emit signalToUI(kSignalProgress,params);
+                    emit signalMachine(kSignalProgress,params);
                 break;
             }
         }

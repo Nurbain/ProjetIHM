@@ -1,6 +1,8 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#include <QLocalSocket>
+
 extern const char kParams[];
 extern const char kParamSwitch[];
 extern const char kParamStatus[];

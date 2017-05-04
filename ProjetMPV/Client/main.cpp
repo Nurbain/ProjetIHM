@@ -18,6 +18,9 @@ int main(int argc, char *argv[])
 
     Client c;
 
+    //QObject::connect(&c, SIGNAL(signalFromClient(signalType,QVariantMap), &w, SLOT(messageFromClient(signalType,QVariantMap)));
+    QObject::connect(&w, SIGNAL(signalFromUI(signalType,QVariantMap)),&c,SLOT(messageFromUI(signalType,QVariantMap)));
+
     QVariantMap params;
 
     params[kParamSwitch]=QVariant(true);

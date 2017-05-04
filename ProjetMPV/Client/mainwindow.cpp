@@ -114,7 +114,7 @@ void MainWindow::on_Param_Eng_clicked()
     ui->BtnMenu_serveur->setText("Server");
     ui->BtnMenu_Param->setText("Settings");
     ui->Param_other->setText("high quality");
-    ui->Param_Serveur->setText("Server");
+    ui->Param_Serveur->setText("Connexion");
     ui->Param_Langue->setText("Language");
 }
 
@@ -142,7 +142,7 @@ void MainWindow::on_Param_Esp_clicked()
     ui->BtnMenu_serveur->setText("Servidor");
     ui->BtnMenu_Param->setText("Paràmetro");
     ui->Param_other->setText("Alta calidad");
-    ui->Param_Serveur->setText("Servidor");
+    ui->Param_Serveur->setText("Connexion");
     ui->Param_Langue->setText("lenga");
 }
 

@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->Player_Pause->setVisible(false);
     ui->Player_Muet->setVisible(false);
+    ui->Panel->setCurrentIndex(1);
 }
 
 MainWindow::~MainWindow()
@@ -284,4 +285,13 @@ void MainWindow::on_Param_Off_clicked()
     QVariantMap params;
     params[kParamSwitch]=QVariant(false);
     emit signalFromUI(kSignalConnectToServer,params);
+     ui->Panel->setCurrentIndex(1);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    QVariantMap params;
+    params[kParamSwitch]=QVariant(true);
+    emit signalFromUI(kSignalConnectToServer,params);
+    ui->Panel->setCurrentIndex(0);
 }

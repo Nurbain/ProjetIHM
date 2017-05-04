@@ -20,6 +20,8 @@ Automate::Automate(QObject *parent) : QObject(parent)
     deChangement=changement->addTransition(this,SIGNAL(signalChangement()),play);
 
     mpv_json = new SendJSONCommand();
+
+    connect(mpv_json->mpv,SIGNAL(readyRead()),this,SLOT(readSocket()));
 }
 
 
@@ -70,7 +72,19 @@ void Automate::playMusique(){
 }
 
 void Automate::pauseMusique(){
-    mpv_json->getPosFromMPV();
+    //mpv_json->getPosFromMPV();
+    mpv_json->obsProgress();
     mpv_json->setPauseOnMPV(true);
+}
+
+void Automate::readSocket(){
+    while(mpv_json->mpv->canReadLine()){
+        QByteArray line = mpv_json->mpv->readLine().trimmed();
+
+        QJsonParseError error;
+        QJsonDocument jDoc=QJsonDocument::fromJson(line,&error);
+        QJsonObject jObj = jDoc.object();
+        qDebug() << QString::fromUtf8(line.constData(),line.length());
+    }
 }
 

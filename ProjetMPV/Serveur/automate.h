@@ -51,6 +51,7 @@ public slots:
     void changementMusique();
     void playMusique();
     void pauseMusique();
+    void readSocket();
 
 };
 

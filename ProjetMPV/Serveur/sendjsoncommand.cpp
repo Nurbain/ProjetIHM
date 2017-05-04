@@ -41,6 +41,7 @@ void SendJSONCommand::sendRequestToMPV(QJsonObject msg)
     // Converting the JSON msg into bytes msg
     QByteArray bytes = QJsonDocument(msg).toJson(QJsonDocument::Compact)+"\n";
 
+    qDebug() << bytes;
     if(mpv!=NULL)
     {
         mpv->write(bytes.data(), bytes.length());
@@ -198,7 +199,7 @@ void SendJSONCommand::getPosFromMPV()
 
     // Creating the JSON message
     jsonArr.append("get_property");
-    jsonArr.append("duration");
+    jsonArr.append("playtime-remaining");
 
     jsonObject["command"]=jsonArr;
     qDebug() << jsonObject;

@@ -188,7 +188,8 @@ void MainWindow::Radio_clicked()
 {
     QObject * emetteur = sender();
     QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
-    QString nom = cast->text() + ".m3u";
+    QString nom = "../Radio/"+ cast->text() + ".m3u";
+    qDebug() << nom;
     QVariantMap params;
     params[kParamNomPlaylist]=nom;
     emit signalFromUI(kSignalChangementPlaylist, params);

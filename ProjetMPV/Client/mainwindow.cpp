@@ -166,6 +166,7 @@ void MainWindow::setPause()
 
 void MainWindow::setVolume(int value)
 {
+    ui->Player_Volume->disconnect(ui->Player_Volume , SIGNAL(valueChanged(int)) , this , SLOT(on_Player_Volume_valueChanged(int)));
     if(value != 0)
     {
         ui->Player_Volume->setValue(value);
@@ -177,6 +178,7 @@ void MainWindow::setVolume(int value)
         ui->Player_Muet->setVisible(true);
         ui->Player_MinVol->setVisible(false);
     }
+    ui->Player_Volume->connect(ui->Player_Volume , SIGNAL(valueChanged(int)) , this , SLOT(on_Player_Volume_valueChanged(int)));
 }
 
 void MainWindow::setConnection()

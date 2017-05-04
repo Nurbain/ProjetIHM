@@ -93,37 +93,6 @@ void SendJSONCommand::changeVolumeOnMPV(int newVolume)
 
 }
 
-/**
-* Method : ajoutPlayListMusique
-* Param : string playList , string Musique
-* Desc : Ajoute une music a une playlist
-* Return : void
-**/
-void SendJSONCommand::ajoutPlayListMusique(QString playList , QString Music)
-{
-    QJsonObject jsonObject;
-    QJsonArray jsonArr;
-
-    // Creating the JSON message
-    jsonArr.append("loadfile");
-    jsonArr.append(Music);
-    jsonArr.append("--playlist="+playList);
-
-    jsonObject["command"]=jsonArr;
-
-    SendJSONCommand::sendRequestToMPV(jsonObject);
-}
-
-/**
-* Method : CreationPlayList
-* Param : string playListNom
-* Desc : Ajoute une music a une playlist
-* Return : void
-**/
-void SendJSONCommand::CreationPlayList(QString playList)
-{
-
-}
 
 
 /**

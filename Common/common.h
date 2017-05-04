@@ -23,7 +23,6 @@ enum signalType {
     kSignalConnectToServer,
     kSignalChangementMusique,
     kSignalChangementVolume,
-    kSignalAjoutPlayList
 };
 
 enum status {

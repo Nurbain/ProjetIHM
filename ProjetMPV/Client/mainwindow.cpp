@@ -39,7 +39,7 @@ void MainWindow::RecuperationMusique ()
 
     // On déclare un QDirIterator dans lequel on indique que l'on souhaite parcourir un répertoire et ses sous-répertoires.
     // De plus, on spécifie le filtre qui nous permettra de récupérer uniquement les fichiers du type souhaité.
-    QDirIterator dirIterator(Dir, listFilter , QDir::Files , QDirIterator::Subdirectories);
+    QDirIterator dirIterator(Dir, listFilter , QDir::Files);
     // Variable qui contiendra tous les fichiers correspondant à notre recherche
     QFileInfoList fileList;
 
@@ -65,6 +65,36 @@ void MainWindow::RecuperationMusique ()
     }
 
     qDebug() << "la2";
+    QDir dir_path(Dir);
+    dir_path.setFilter((QDir::AllDirs));
+    QStringList Alldir = dir_path.entryList();
+    for(int i = 0 ; i<Alldir.size() ; i++)
+    {
+         int xDir = 110 , yDir = 20 , largeDir = 200, hauteurDir = 20;
+        if(Alldir.at(i) != "." && Alldir.at(i) != "..")
+        {
+            QString newpath = Dir+"/"+Alldir.at(i);
+            QDir::setCurrent(newpath);
+            QDirIterator dirIterator2(newpath, listFilter , QDir::Files | QDir::NoSymLinks );
+
+            QPushButton *playList = new QPushButton (Alldir.at(i), ui->Tab_PlayList);
+            playList->setGeometry(xDir,yDir , largeDir , hauteurDir);
+            while(dirIterator2.hasNext())
+            {
+                yDir = yDir+20;
+                QFileInfo file(dirIterator2.next());
+                QLabel *titre  =new QLabel(file.fileName() , ui->Tab_PlayList);
+                titre->setText("- "+file.fileName());
+                qDebug() << titre->text();
+                titre->setGeometry(xDir+30,yDir , largeDir+200 , hauteurDir);
+
+
+            }
+            yDir = yDir+20;
+        }
+
+
+    }
 
 }
 

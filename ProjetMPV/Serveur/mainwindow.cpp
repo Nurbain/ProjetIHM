@@ -21,6 +21,9 @@ void MainWindow::message(signalType sig, QVariantMap params){
             qDebug("Modif IHM");
             ui->Serveur_MusicNow->setText(params[kParamNomMusique].toString());
             break;
+        case kSignalProgress:
+            ui->Serveur_Slider->setSliderPosition(params[kParamProgress].toInt());
+            break;
 
     }
 

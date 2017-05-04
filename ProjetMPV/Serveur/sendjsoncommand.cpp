@@ -1,6 +1,6 @@
 #include "sendjsoncommand.h"
 #include <iostream>
-
+#include "../../Common/common.h"
 using namespace std;
 
 SendJSONCommand::SendJSONCommand(QObject *parent) :
@@ -200,12 +200,8 @@ void SendJSONCommand::getPosFromMPV()
 
     // Creating the JSON message
     jsonArr.append("get_property");
-<<<<<<< HEAD
     jsonArr.append("playtime-remaining");
-=======
-    jsonArr.append("time-pos");
 
->>>>>>> 69daf1c651e3a144d62e0d79922d3daa9ea4f87f
 
     jsonObject["command"]=jsonArr;
     qDebug() << jsonObject;
@@ -230,7 +226,7 @@ void SendJSONCommand::obsProgress(){
      QJsonObject jsonObject;
     // Creating the JSON message
     jsonArr.append("observe_property");
-    jsonArr.append(1);
+    jsonArr.append(CHANGE_PROGRESS_PERCENT);
     jsonArr.append("percent-pos");
     jsonObject["command"]=jsonArr;
     SendJSONCommand::sendRequestToMPV(jsonObject);

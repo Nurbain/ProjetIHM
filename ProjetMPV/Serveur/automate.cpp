@@ -81,11 +81,23 @@ void Automate::pauseMusique(){
 void Automate::readSocket(){
     while(mpv_json->mpv->canReadLine()){
         QByteArray line = mpv_json->mpv->readLine().trimmed();
+        QVariantMap params;
 
         QJsonParseError error;
         QJsonDocument jDoc=QJsonDocument::fromJson(line,&error);
         QJsonObject jObj = jDoc.object();
         qDebug() << QString::fromUtf8(line.constData(),line.length());
+        if(jObj["event"] == "property-change"){
+            qDebug("Ah ouais c'est op");
+            switch(jObj["id"].toInt()){
+                case CHANGE_PROGRESS_PERCENT:
+                    qDebug("Modif progress ");
+                    qDebug() << (int)jObj["data"].toDouble();
+                    params[kParamProgress]=QVariant((int)jObj["data"].toDouble());
+                    emit signalToUI(kSignalProgress,params);
+                break;
+            }
+        }
     }
 }
 

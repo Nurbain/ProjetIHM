@@ -25,7 +25,7 @@ private:
 
 public slots:
     void Music_clicked();
-    void Plus_clicked();
+    //void Plus_clicked();
 private slots:
     void on_Player_Play_clicked();
     void on_Player_Pause_clicked();

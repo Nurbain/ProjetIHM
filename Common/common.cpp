@@ -11,6 +11,7 @@ const char kParamStatus[]="status";
 const char kParamMessage[]="message";
 const char kParamNomMusique[]="NomMusique";
 const char kParamVolume[]="volume";
+const char kParamProgress[]="Progress";
 
 const char kJsonSignal[]="signal";
 const char kJsonParams[]="params";

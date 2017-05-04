@@ -43,6 +43,7 @@ signals:
     void signalMachine(signalType,QVariantMap);
     void signalPause();
     void signalChangement();
+    void signalToUI(signalType,QVariantMap);
 
 public slots:
 

@@ -10,11 +10,13 @@ extern const char kParamMessage[];
 extern const char kParamNomMusique[];
 extern const char kParamVolume[];
 extern const char kParamPlayList[];
+extern const char kParamProgress[];
 
 extern const char kJsonSignal[];
 extern const char kJsonParams[];
 
 #define SERVER_NAME "IHM"
+#define CHANGE_PROGRESS_PERCENT 1
 
 enum signalType {
 	kSignalStart,
@@ -23,6 +25,7 @@ enum signalType {
     kSignalConnectToServer,
     kSignalChangementMusique,
     kSignalChangementVolume,
+    kSignalProgress
 };
 
 enum status {

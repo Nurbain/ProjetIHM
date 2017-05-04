@@ -33,7 +33,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
+     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -73,7 +73,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
+     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -92,7 +92,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
+     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -166,7 +166,7 @@ border-bottom-left-radius: 0px;
 </string>
     </property>
     <property name="value">
-     <number>2</number>
+     <number>44</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -214,15 +214,6 @@ border-bottom-left-radius: 0px;
      <string>1.05/3.33</string>
     </property>
    </widget>
-   <zorder>Fond</zorder>
-   <zorder>Fond</zorder>
-   <zorder>Serveur_MusicAfter</zorder>
-   <zorder>label1</zorder>
-   <zorder>label</zorder>
-   <zorder>Serveur_MusicBefore</zorder>
-   <zorder>Serveur_Slider</zorder>
-   <zorder>Serveur_MusicNow</zorder>
-   <zorder>Serveur_MusicTemps</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -246,7 +237,7 @@ border-bottom-left-radius: 0px;
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="ressource.qrc"/>
+  <include location="../Client/ressource.qrc"/>
  </resources>
  <connections/>
 </ui>

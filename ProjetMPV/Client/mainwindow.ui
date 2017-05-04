@@ -509,33 +509,6 @@ border : none ;</string>
         </size>
        </property>
       </widget>
-      <widget class="QProgressBar" name="Player_ProgressBar">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>40</y>
-         <width>361</width>
-         <height>23</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QProgressBar {
-    border: 2px solid grey;
-    border-radius: 5px;
-}
-
-QProgressBar::chunk{
-	background-color: rgb(154, 154, 154);
-}
-</string>
-       </property>
-       <property name="value">
-        <number>75</number>
-       </property>
-       <property name="textVisible">
-        <bool>false</bool>
-       </property>
-      </widget>
       <widget class="QLabel" name="Player_Artiste">
        <property name="geometry">
         <rect>
@@ -715,9 +688,9 @@ QSlider::handle {
       <widget class="QLabel" name="Player_Temps">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>430</x>
          <y>20</y>
-         <width>51</width>
+         <width>71</width>
          <height>20</height>
         </rect>
        </property>
@@ -766,6 +739,22 @@ border : none ;</string>
          <width>20</width>
          <height>20</height>
         </size>
+       </property>
+      </widget>
+      <widget class="QSlider" name="Player_ProgressBar">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>40</y>
+         <width>351</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </widget>

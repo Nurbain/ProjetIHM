@@ -27,7 +27,7 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
 {
     switch(sig){
         case kSignalStart:
-
+            setConnection();
             break;
         case kSignalPause:
             setPause();
@@ -36,9 +36,11 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
 
             break;
         case kSignalChangementVolume:
-
+            setVolume(params[kParamVolume].toInt());
             break;
-
+        case kSignalProgress:
+            setProgress(params[kParamProgress].toInt());
+            break;
         default:
             return;
     }
@@ -145,10 +147,48 @@ void MainWindow::PlayList_clicked()
 }
 
 
+//MessageFromClient -> SetUI
 
 void MainWindow::setPause()
 {
+    const bool visible = ui->Player_Pause->isVisible();
+    if(visible)
+    {
+        ui->Player_Pause->setVisible(false);
+        ui->Player_Play->setVisible(true);
+    }
+    else
+    {
+        ui->Player_Pause->setVisible(true);
+        ui->Player_Play->setVisible(false);
+    }
+}
 
+void MainWindow::setVolume(int value)
+{
+    if(value != 0)
+    {
+        ui->Player_Volume->setValue(value);
+        ui->Player_Muet->setVisible(false);
+        ui->Player_MinVol->setVisible(true);
+    }
+    else
+    {
+        ui->Player_Muet->setVisible(true);
+        ui->Player_MinVol->setVisible(false);
+    }
+}
+
+void MainWindow::setConnection()
+{
+    ui->Param_On->setChecked(true);
+    ui->Param_Off->setChecked(false);
+    ui->Panel->setCurrentIndex(0);
+}
+
+void MainWindow::setProgress(int value)
+{
+    ui->Player_ProgressBar->setValue(value);
 }
 
 void MainWindow::on_Player_Pause_clicked()
@@ -293,5 +333,8 @@ void MainWindow::on_pushButton_2_clicked()
     QVariantMap params;
     params[kParamSwitch]=QVariant(true);
     emit signalFromUI(kSignalConnectToServer,params);
+
+    ui->Param_On->setChecked(true);
+    ui->Param_Off->setChecked(false);
     ui->Panel->setCurrentIndex(0);
 }

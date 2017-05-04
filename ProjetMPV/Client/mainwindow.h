@@ -23,6 +23,9 @@ private:
     Ui::MainWindow *ui;
     void RecuperationMusique ();
     void setPause();
+    void setVolume(int value);
+    void setConnection();
+    void setProgress(int value);
 
 public slots:
     void Music_clicked();

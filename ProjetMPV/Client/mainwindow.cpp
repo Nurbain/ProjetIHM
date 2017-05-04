@@ -422,3 +422,8 @@ void MainWindow::on_Player_ProgressBar_sliderPressed()
 {
     canModif=false;
 }
+
+void MainWindow::on_Player_Avance_clicked()
+{
+
+}

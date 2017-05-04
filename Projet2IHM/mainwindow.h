@@ -43,6 +43,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void RecuperationMusique ();
 };
 
 #endif // MAINWINDOW_H

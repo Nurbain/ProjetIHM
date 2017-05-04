@@ -425,5 +425,6 @@ void MainWindow::on_Player_ProgressBar_sliderPressed()
 
 void MainWindow::on_Player_Avance_clicked()
 {
-
+    QVariantMap params;
+    emit signalFromUI(kSignalSpeedUp,params);
 }

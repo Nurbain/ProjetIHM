@@ -21,16 +21,5 @@ int main(int argc, char *argv[])
     QObject::connect(&c, SIGNAL(signalFromClient(signalType,QVariantMap)), &w, SLOT(messageFromClient(signalType,QVariantMap)));
     QObject::connect(&w, SIGNAL(signalFromUI(signalType,QVariantMap)),&c,SLOT(messageFromUI(signalType,QVariantMap)));
 
-    /*QVariantMap params;
-
-    params[kParamSwitch]=QVariant(true);
-
-    c.messageFromUI(kSignalConnectToServer,params);
-
-    params[kParamNomMusique]="../Musique/vexento-busy-mind.mp3";*/
-
-    //c.messageFromUI(kSignalChangementMusique,params);
-
-
     return a.exec();
 }

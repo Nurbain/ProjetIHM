@@ -60,6 +60,9 @@ void Client::messageFromUI(signalType sig, QVariantMap params) {
     case kSignalProgressChange:
       sendRequestToSocket(m_socket,kSignalProgressChange,params);
       break;
+    case kSignalSpeedUp:
+      sendRequestToSocket(m_socket,kSignalSpeedUp,params);
+      break;
     default:
       break;
     }

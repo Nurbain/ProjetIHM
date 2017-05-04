@@ -51,6 +51,7 @@ signals:
     void signalChangement();
     void signalToUI(signalType,QVariantMap);
     void signalChangementPlaylist();
+    void signalSpeed();
 
 public slots:
 
@@ -61,6 +62,7 @@ public slots:
     void pauseMusique();
     void readSocket();
     void changementPlaylistFct();
+    void speedMusique();
 
 };
 

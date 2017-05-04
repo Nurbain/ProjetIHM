@@ -47,6 +47,7 @@ void Automate::start(bool on){
     QObject::connect(play,SIGNAL(entered()),this,SLOT(playMusique()));
     QObject::connect(pause,SIGNAL(entered()),this,SLOT(pauseMusique()));
     QObject::connect(changementPlaylist,SIGNAL(entered()),this,SLOT(changementPlaylistFct()));
+    QObject::connect(speedUp,SIGNAL(entered()),this,SLOT(speedMusique()));
 
     mpv_json->obsProgress();
     mpv_json->obsDuration();
@@ -86,9 +87,16 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             qDebug() << params[kParamProgress].toInt();
             mpv_json->setProgress(params[kParamProgress].toInt());
             break;
+        case kSignalSpeedUp:
+            emit signalSpeed();
+            break;
         default:
             return;
     }
+}
+
+void Automate::speedMusique(){
+    mpv_json->changeSpeedOnMPV(2);
 }
 
 void Automate::changementMusique(){
@@ -103,6 +111,7 @@ void Automate::changementPlaylistFct(){
 
 void Automate::playMusique(){
     mpv_json->setPauseOnMPV(false);
+    mpv_json->changeSpeedOnMPV(1);
 }
 
 void Automate::pauseMusique(){

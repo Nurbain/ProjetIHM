@@ -38,6 +38,7 @@ public slots:
     void PlayList_clicked();
     void Radio_clicked();
     void messageFromClient(signalType sig, QVariantMap params);
+    void on_Player_Avance_clicked();
 
 private slots:
     void on_Player_Play_clicked();

@@ -1373,7 +1373,7 @@ border : none ;</string>
      <x>0</x>
      <y>0</y>
      <width>845</width>
-     <height>19</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -1388,8 +1388,6 @@ border : none ;</string>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="../Serveur/ressource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

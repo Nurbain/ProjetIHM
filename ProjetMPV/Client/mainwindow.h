@@ -22,6 +22,9 @@ signals:
 private:
     Ui::MainWindow *ui;
     void RecuperationMusique ();
+
+public slots:
+    void Music_clicked();
 };
 
 #endif // MAINWINDOW_H

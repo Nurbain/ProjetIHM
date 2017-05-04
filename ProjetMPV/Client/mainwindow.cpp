@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QDirIterator>
 #include <QDir>
+#include <QPushButton>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,7 +18,16 @@ MainWindow::~MainWindow()
 }
 
 
-//Affichage Musique
+void MainWindow::Music_clicked()
+{
+    QObject * emetteur = sender();
+    QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
+    qDebug() << cast->text();;
+    QVariantMap params;
+    params[kParamNomMusique]=cast->text();
+    emit signalFromUI(kSignalChangementMusique, params);
+}
+
 
 // On sélectionne le répertoire à partir duquel on va rechercher les fichiers MP3
 void MainWindow::RecuperationMusique ()
@@ -40,16 +50,23 @@ void MainWindow::RecuperationMusique ()
     QFileInfoList fileList;
 
     QStringList nomFichier;
+    int x = 90;
+    int y = 20;
     // Tant qu'on n'est pas arrivé à la fin de l'arborescence...
     while(dirIterator.hasNext())
     {
+
         // ...on va au prochain fichier correspondant à notre filtre
         QFileInfo file(dirIterator.next());
         //fileList << dirIterator.fileInfo();
         nomFichier << file.fileName();
         qDebug() << file.fileName();
 
-
+        QPushButton *newbtn = new QPushButton (file.fileName(), ui->Tab_Musique);
+        QString nom = newbtn->text();
+        QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Music_clicked()));
+        newbtn->setGeometry(x,y,461,25);
+        y = y+30;
     }
 
     qDebug() << "la2";

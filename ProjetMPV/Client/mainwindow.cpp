@@ -33,7 +33,8 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
             setPause();
             break;
         case kSignalChangementMusique:
-
+            setInfos(params[kParamNomMusique].toString());
+            setPlayChange();
             break;
         case kSignalChangementVolume:
             setVolume(params[kParamVolume].toInt());
@@ -127,7 +128,6 @@ void MainWindow::RecuperationMusique ()
 
 }
 
-
 void MainWindow::Music_clicked()
 {
     QObject * emetteur = sender();
@@ -195,6 +195,19 @@ void MainWindow::setProgress(int value)
     if(canModif)
         ui->Player_ProgressBar->setValue(value);
 }
+
+void MainWindow::setPlayChange()
+{
+    ui->Player_Play->setVisible(false);
+    ui->Player_Pause->setVisible(true);
+}
+
+void MainWindow::setInfos(QString nom)
+{
+    ui->Player_Chanson->setText(nom);
+}
+
+
 
 void MainWindow::on_Player_Pause_clicked()
 {

@@ -26,6 +26,8 @@ private:
     void setVolume(int value);
     void setConnection();
     void setProgress(int value);
+    void setPlayChange();
+    void setInfos(QString nom);
     bool canModif=true;
 
 public slots:

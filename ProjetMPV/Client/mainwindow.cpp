@@ -80,6 +80,8 @@ void MainWindow::RecuperationMusique ()
 
             QPushButton *playList = new QPushButton (Alldir.at(i), ui->Tab_PlayList);
             playList->setGeometry(xDir,yDir , largeDir , hauteurDir);
+            QObject::connect(playList, SIGNAL (clicked(bool)) ,this , SLOT(PlayList_clicked()));
+
             while(dirIterator2.hasNext())
             {
                 yDir = yDir+20;
@@ -110,6 +112,10 @@ void MainWindow::Music_clicked()
     emit signalFromUI(kSignalChangementMusique, params);
 }
 
+void MainWindow::PlayList_clicked()
+{
+
+}
 
 void MainWindow::on_Player_Pause_clicked()
 {

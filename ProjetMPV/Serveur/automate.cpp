@@ -50,6 +50,7 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             emit signalPause();
             break;
         case kSignalChangementMusique:
+            qDebug("On change");
             currentMusique=params[kParamNomMusique].toString();
             emit signalChangement();
             break;
@@ -86,13 +87,13 @@ void Automate::readSocket(){
         QJsonParseError error;
         QJsonDocument jDoc=QJsonDocument::fromJson(line,&error);
         QJsonObject jObj = jDoc.object();
-        qDebug() << QString::fromUtf8(line.constData(),line.length());
+        //qDebug() << QString::fromUtf8(line.constData(),line.length());
         if(jObj["event"] == "property-change"){
-            qDebug("Ah ouais c'est op");
+            //qDebug("Ah ouais c'est op");
             switch(jObj["id"].toInt()){
                 case CHANGE_PROGRESS_PERCENT:
-                    qDebug("Modif progress ");
-                    qDebug() << (int)jObj["data"].toDouble();
+                    //qDebug("Modif progress ");
+                    //qDebug() << (int)jObj["data"].toDouble();
                     params[kParamProgress]=QVariant((int)jObj["data"].toDouble());
                     emit signalToUI(kSignalProgress,params);
                 break;

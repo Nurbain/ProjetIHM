@@ -4,9 +4,13 @@
 #include <QObject>
 #include <QLocalServer>
 #include <QLocalSocket>
+#include <QList>
+#include <vector>
 #include <QtConcurrent/QtConcurrent>
 #include "sendjsoncommand.h"
 #include "../../Common/common.h"
+
+using namespace std;
 
 
 class Serveur : public QObject
@@ -18,11 +22,13 @@ public:
 
 private:
     QLocalServer *m_server;
-    QLocalSocket *m_client=NULL;
+    QList<QLocalSocket*> m_client;
+    //QLocalSocket *m_client=NULL;
     void clientMessageLoop();
     bool m_running;
     QFuture<void> m_serverLoopThread;
     SendJSONCommand *mpv_json;
+    bool m_lecture=false;
 
 signals:
     void signalFromServer(signalType, QVariantMap);

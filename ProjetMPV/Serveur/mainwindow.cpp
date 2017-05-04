@@ -20,7 +20,8 @@ void MainWindow::message(signalType sig, QVariantMap params){
         case kSignalChangementMusique:
             qDebug("Modif IHM");
             ui->Serveur_MusicNow->setText(params[kParamNomMusique].toString());
-        break;
+            break;
+
     }
 
 

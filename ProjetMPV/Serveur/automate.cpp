@@ -51,7 +51,7 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             emit signalChangement();
             break;
         case kSignalChangementVolume:
-            mpv_json->changeVolumeOnMPV(params[kParamVolume]);
+            mpv_json->changeVolumeOnMPV(params[kParamVolume].toInt());
             break;
         default:
             return;
@@ -66,6 +66,7 @@ void Automate::changementMusique(){
 void Automate::playMusique(){
 
     mpv_json->setPauseOnMPV(false);
+
 
 }
 

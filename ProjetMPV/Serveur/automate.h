@@ -25,9 +25,7 @@ private:
     QState *play;
     QState *pause;
     QState *changement;
-    QState *playPlaylist;
     QState *changementPlaylist;
-    QState *pausePlaylist;
 
     QState *fonction;
     QHistoryState *fonctionHistory;
@@ -36,13 +34,12 @@ private:
     QSignalTransition *dePause;
     QSignalTransition *deChangement;
     QSignalTransition *deChangementPlaylist;
-    QSignalTransition *dePlayPlaylist;
-    QSignalTransition *dePausePlaylist;
 
 
     SendJSONCommand *mpv_json;
 
     QString currentMusique;
+    QString currentPlaylist;
 
 
 signals:
@@ -52,7 +49,6 @@ signals:
     void signalChangement();
     void signalToUI(signalType,QVariantMap);
     void signalChangementPlaylist();
-    void signalPausePlaylist();
 
 public slots:
 
@@ -62,6 +58,7 @@ public slots:
     void playMusique();
     void pauseMusique();
     void readSocket();
+    void changementPlaylistFct();
 
 };
 

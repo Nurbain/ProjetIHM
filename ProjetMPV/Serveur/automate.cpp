@@ -10,25 +10,19 @@ Automate::Automate(QObject *parent) : QObject(parent)
     play=new QState(fonction);
     pause=new QState(fonction);
     changement=new QState(fonction);
-    playPlaylist=new QState(fonction);
-    pausePlaylist=new QState(fonction);
     changementPlaylist=new QState(fonction);
 
-    dePlayPlaylist=playPlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
-    dePlayPlaylist=playPlaylist->addTransition(this,SIGNAL(signalPausePlaylist()),pausePlaylist);
-
-    dePausePlaylist=pausePlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
-    dePausePlaylist=pausePlaylist->addTransition(this,SIGNAL(signalPausePlaylist()),playPlaylist);
-
-    deChangementPlaylist=changementPlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),playPlaylist);
+    deChangementPlaylist=changementPlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),play);
 
 
 
     dePlay=play->addTransition(this,SIGNAL(signalPause()),pause);
     dePlay=play->addTransition(this,SIGNAL(signalChangement()),changement);
+    dePlay=play->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
 
     dePause=pause->addTransition(this,SIGNAL(signalPause()),play);
     dePause=pause->addTransition(this,SIGNAL(signalChangement()),changement);
+    dePause=pause->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
 
     deChangement=changement->addTransition(this,SIGNAL(signalChangement()),play);
 
@@ -48,6 +42,9 @@ void Automate::start(bool on){
     QObject::connect(changement,SIGNAL(entered()),this,SLOT(changementMusique()));
     QObject::connect(play,SIGNAL(entered()),this,SLOT(playMusique()));
     QObject::connect(pause,SIGNAL(entered()),this,SLOT(pauseMusique()));
+    QObject::connect(changementPlaylist,SIGNAL(entered()),this,SLOT(changementPlaylistFct()));
+
+    mpv_json->obsProgress();
 
     fonction->setInitialState(pause);
     machine->setInitialState(fonction);
@@ -70,7 +67,11 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
         case kSignalChangementVolume:
             mpv_json->changeVolumeOnMPV(params[kParamVolume].toInt());
             break;
-
+        case kSignalChangementPlaylist:
+            qDebug("Ouais c'est bon c'est bind");
+            currentPlaylist=params[kParamNomPlaylist].toString();
+            emit signalChangementPlaylist();
+            break;
         default:
             return;
     }
@@ -81,14 +82,17 @@ void Automate::changementMusique(){
     emit signalChangement();
 }
 
-void Automate::playMusique(){
+void Automate::changementPlaylistFct(){
+    mpv_json->changePlaylistOnMPV(currentPlaylist);
+    emit signalChangementPlaylist();
+}
 
+void Automate::playMusique(){
     mpv_json->setPauseOnMPV(false);
 }
 
 void Automate::pauseMusique(){
     //mpv_json->getPosFromMPV();
-    mpv_json->obsProgress();
     mpv_json->setPauseOnMPV(true);
 }
 

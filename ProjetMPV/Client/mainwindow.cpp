@@ -1,4 +1,4 @@
-/* Urbain Nathan & Quentin Wendlig
+/* Urbain Nathan & Quentin Wendling
  * L3S6 CMI Image
  * Projet 2 IHM
  */

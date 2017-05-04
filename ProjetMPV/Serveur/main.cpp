@@ -1,3 +1,8 @@
+/* Urbain Nathan & Quentin Wendling
+ * L3S6 CMI Image
+ * Projet 2 IHM
+ */
+
 #include "mainwindow.h"
 #include "serveur.h"
 #include "automate.h"
@@ -6,6 +11,9 @@
 
 int main(int argc, char *argv[])
 {
+    /*Il faut lancer mpv dans le repertoire Musique avec
+     * mpv --idle --quiet --input-ipc-server=/tmp/mpv-socket &*/
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

@@ -1,3 +1,8 @@
+/* Urbain Nathan & Quentin Wendling
+ * L3S6 CMI Image
+ * Projet 2 IHM
+ */
+
 #ifndef SERVEUR_H
 #define SERVEUR_H
 

@@ -120,12 +120,10 @@ void Automate::readSocket(){
                     emit signalMachine(kSignalProgress,params);
                     break;
                 case CHANGE_DURATION:
-                    qDebug() << jObj;
                     params[kParamDuration]=QVariant(jObj["data"].toDouble());
                     emit signalToUI(kSignalDuration,params);
                     break;
                 case CHANGE_TIMEPOS:
-                    qDebug() << jObj;
                     params[kParamTimeChange]=QVariant(jObj["data"].toDouble());
                     emit signalToUI(kSignalTimeChange,params);
                     break;

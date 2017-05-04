@@ -3,7 +3,8 @@
 #include <QDirIterator>
 #include <QDir>
 #include <QPushButton>
-
+#include <QVBoxLayout>
+#include <QIcon>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -52,7 +53,6 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
 // On sélectionne le répertoire à partir duquel on va rechercher les fichiers MP3
 void MainWindow::RecuperationMusique ()
 {
-    qDebug() << "la";
 
     // On sélectionne le répertoire à partir duquel on va rechercher les fichiers MP3
     QString selectDir = QDir::currentPath() ;
@@ -67,12 +67,13 @@ void MainWindow::RecuperationMusique ()
     // De plus, on spécifie le filtre qui nous permettra de récupérer uniquement les fichiers du type souhaité.
     QDirIterator dirIterator(Dir, listFilter , QDir::Files);
     // Variable qui contiendra tous les fichiers correspondant à notre recherche
-    QFileInfoList fileList;
+
 
     QStringList nomFichier;
-    int x = 20;
-    int y = 10;
+
     // Tant qu'on n'est pas arrivé à la fin de l'arborescence...
+
+    QVBoxLayout *lay = new QVBoxLayout(this);
     while(dirIterator.hasNext())
     {
 
@@ -80,22 +81,22 @@ void MainWindow::RecuperationMusique ()
         QFileInfo file(dirIterator.next());
         //fileList << dirIterator.fileInfo();
         nomFichier << file.fileName();
-        qDebug() << file.fileName();
 
         QString nom = file.fileName();
         nom.resize(nom.size()-4);
-        QPushButton *newbtn = new QPushButton (nom, ui->Musique_scroll);
+        //QIcon icon = new QIcon);
+        QPushButton *newbtn = new QPushButton (nom);
+        lay->addWidget(newbtn);
         newbtn->text() = nom;
         QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Music_clicked()));
-        newbtn->setGeometry(x,y,470,25);
 
-        y = y+30;
     }
+    ui->ContentMusique->setLayout(lay);
 
     QDir dir_path(Dir);
     dir_path.setFilter((QDir::AllDirs));
     QStringList Alldir = dir_path.entryList();
-    int xDir = 20 , yDir = 20 , largeDir = 200, hauteurDir = 20;
+    QVBoxLayout *lay2 = new QVBoxLayout(this);
     for(int i = 0 ; i<Alldir.size() ; i++)
     {
 
@@ -105,27 +106,26 @@ void MainWindow::RecuperationMusique ()
             QDir::setCurrent(newpath);
             QDirIterator dirIterator2(newpath, listFilter , QDir::Files | QDir::NoSymLinks );
 
-            QPushButton *playList = new QPushButton (Alldir.at(i), ui->PlayListScroll);
-            playList->setGeometry(xDir,yDir , largeDir , hauteurDir);
+            QPushButton *playList = new QPushButton (Alldir.at(i));
+            lay2->addWidget(playList);
             QObject::connect(playList, SIGNAL (clicked(bool)) ,this , SLOT(PlayList_clicked()));
 
             while(dirIterator2.hasNext())
             {
-                yDir = yDir+20;
                 QFileInfo file(dirIterator2.next());
-                QLabel *titre  =new QLabel(file.fileName() , ui->PlayListScroll);
+                QLabel *titre  =new QLabel(file.fileName());
+                lay2->addWidget(titre);
                 QString nom = file.fileName();
                 nom.resize(nom.size()-4);
                 titre->setText("- "+nom);
-                titre->setGeometry(xDir+30,yDir , largeDir+200 , hauteurDir);
-
 
             }
-            yDir = yDir+50;
+
         }
 
 
     }
+    ui->ContentPlayList->setLayout(lay2);
 
 }
 
@@ -139,12 +139,10 @@ void MainWindow::RecuperationRadio ()
      listFilter << "*.m3u";
 
      QDirIterator dirIterator(Dir, listFilter , QDir::Files);
-     QFileInfoList fileList;
      QStringList nomFichier;
 
-     int x = 20;
-     int y = 10;
 
+     QVBoxLayout *lay = new QVBoxLayout(this);
      while(dirIterator.hasNext())
      {
 
@@ -152,16 +150,15 @@ void MainWindow::RecuperationRadio ()
          QFileInfo file(dirIterator.next());
          //fileList << dirIterator.fileInfo();
          nomFichier << file.fileName();
-         qDebug() << file.fileName();
 
          QString nom = file.fileName();
          nom.resize(nom.size()-4);
-         QPushButton *newbtn = new QPushButton (nom, ui->Radio_scroll);
+         QPushButton *newbtn = new QPushButton (nom);
+         lay->addWidget(newbtn);
          newbtn->text() = nom;
          QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Radio_clicked()));
-         newbtn->setGeometry(x,y,470,25);
-         y = y+30;
      }
+     ui->ContentRadio->setLayout(lay);
 }
 
 void MainWindow::Music_clicked()
@@ -336,7 +333,7 @@ void MainWindow::on_BtnMenu_Radio_clicked()
 
 void MainWindow::on_BtnMenu_Param_clicked()
 {
-     ui->TabInteraction->setCurrentIndex(1);
+     ui->TabInteraction->setCurrentIndex(2);
 }
 
 void MainWindow::on_Player_Volume_valueChanged(int value)

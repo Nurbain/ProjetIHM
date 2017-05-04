@@ -753,7 +753,7 @@ border-bottom-left-radius: 0px;
        </rect>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Tab_Musique">
        <property name="styleSheet">
@@ -790,7 +790,7 @@ border-bottom-left-radius: 0px;
         <property name="widgetResizable">
          <bool>true</bool>
         </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents">
+        <widget class="QWidget" name="ContentMusique">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -837,7 +837,7 @@ border-bottom-left-radius: 0px;
         <property name="widgetResizable">
          <bool>true</bool>
         </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_4">
+        <widget class="QWidget" name="ContentRadio">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -1098,10 +1098,13 @@ qproperty-alignment : AlignRight;</string>
           <height>211</height>
          </rect>
         </property>
+        <property name="midLineWidth">
+         <number>0</number>
+        </property>
         <property name="widgetResizable">
          <bool>true</bool>
         </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_3">
+        <widget class="QWidget" name="ContentPlayList">
          <property name="geometry">
           <rect>
            <x>0</x>

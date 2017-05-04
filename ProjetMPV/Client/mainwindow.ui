@@ -461,7 +461,7 @@ border : none ;</string>
 qproperty-alignment : AlignRight;</string>
       </property>
       <property name="text">
-       <string>Enceinte</string>
+       <string>Connexion</string>
       </property>
      </widget>
      <widget class="QLabel" name="Param_Langue">
@@ -552,7 +552,7 @@ qproperty-alignment : AlignRight;</string>
        <string>On</string>
       </property>
       <property name="checked">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QRadioButton" name="Param_Off">
@@ -571,6 +571,9 @@ qproperty-alignment : AlignRight;</string>
       </property>
       <property name="text">
        <string>Off</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QCheckBox" name="Param_CheckHD">

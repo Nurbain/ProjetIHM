@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Tab_Musique">
      <property name="styleSheet">
@@ -49,10 +49,23 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/Play.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/Play.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>20</y>
+        <width>461</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
       </property>
      </widget>
     </widget>
@@ -73,7 +86,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/Radio.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/Radio.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -97,7 +110,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/vueMenu.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/vueMenu.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -119,7 +132,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -141,7 +154,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -232,7 +245,7 @@ color : white ;
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
       </property>
      </widget>
      <widget class="QSlider" name="horizontalSlider">
@@ -342,7 +355,7 @@ color : white ;
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/settings.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/settings.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -365,7 +378,7 @@ border : none ;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="../Serveur/ressource.qrc">
+       <iconset resource="ressource.qrc">
         <normaloff>:/icon/Sprite/Drapeau-anglais.png</normaloff>:/icon/Sprite/Drapeau-anglais.png</iconset>
       </property>
       <property name="iconSize">
@@ -392,7 +405,7 @@ border : none ;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="../Serveur/ressource.qrc">
+       <iconset resource="ressource.qrc">
         <normaloff>:/icon/Sprite/espagnole.png</normaloff>:/icon/Sprite/espagnole.png</iconset>
       </property>
       <property name="iconSize">
@@ -419,7 +432,7 @@ border : none ;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="../Serveur/ressource.qrc">
+       <iconset resource="ressource.qrc">
         <normaloff>:/icon/Sprite/drapeau-francais.png</normaloff>:/icon/Sprite/drapeau-francais.png</iconset>
       </property>
       <property name="iconSize">
@@ -591,7 +604,7 @@ qproperty-alignment : AlignRight;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/playlist.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/playlist.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -615,7 +628,7 @@ qproperty-alignment : AlignRight;</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/attente.png</pixmap>
+       <pixmap resource="ressource.qrc">:/icon/Sprite/attente.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -671,7 +684,7 @@ color: rgb(255, 255, 255);
      <string>Musique</string>
     </property>
     <property name="icon">
-     <iconset resource="../Serveur/ressource.qrc">
+     <iconset resource="ressource.qrc">
       <normaloff>:/icon/Sprite/PlayMenu.png</normaloff>:/icon/Sprite/PlayMenu.png</iconset>
     </property>
     <property name="iconSize">
@@ -735,7 +748,7 @@ color: rgb(255, 255, 255);
      <string>PlayList</string>
     </property>
     <property name="icon">
-     <iconset resource="../Serveur/ressource.qrc">
+     <iconset resource="ressource.qrc">
       <normaloff>:/icon/Sprite/playlistMenu.png</normaloff>:/icon/Sprite/playlistMenu.png</iconset>
     </property>
     <property name="iconSize">
@@ -793,7 +806,7 @@ color: rgb(255, 255, 255);
      <string>Attente</string>
     </property>
     <property name="icon">
-     <iconset resource="../Serveur/ressource.qrc">
+     <iconset resource="ressource.qrc">
       <normaloff>:/icon/Sprite/attenteMenu.png</normaloff>:/icon/Sprite/attenteMenu.png</iconset>
     </property>
     <property name="iconSize">
@@ -851,7 +864,7 @@ color: rgb(255, 255, 255);
      <string>Radio</string>
     </property>
     <property name="icon">
-     <iconset resource="../Serveur/ressource.qrc">
+     <iconset resource="ressource.qrc">
       <normaloff>:/icon/Sprite/RadioMenu.png</normaloff>:/icon/Sprite/RadioMenu.png</iconset>
     </property>
     <property name="iconSize">
@@ -909,7 +922,7 @@ color: rgb(255, 255, 255);
      <string>Enceinte</string>
     </property>
     <property name="icon">
-     <iconset resource="../Serveur/ressource.qrc">
+     <iconset resource="ressource.qrc">
       <normaloff>:/icon/Sprite/vueMenu.png</normaloff>:/icon/Sprite/vueMenu.png</iconset>
     </property>
     <property name="iconSize">
@@ -999,7 +1012,7 @@ border : none ;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../Serveur/ressource.qrc">
+      <iconset resource="ressource.qrc">
        <normaloff>:/icon/Sprite/Play.png</normaloff>:/icon/Sprite/Play.png</iconset>
      </property>
      <property name="iconSize">
@@ -1029,7 +1042,7 @@ border : none ;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../Serveur/ressource.qrc">
+      <iconset resource="ressource.qrc">
        <normaloff>:/icon/Sprite/pause.png</normaloff>:/icon/Sprite/pause.png</iconset>
      </property>
      <property name="iconSize">
@@ -1059,7 +1072,7 @@ border : none ;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../Serveur/ressource.qrc">
+      <iconset resource="ressource.qrc">
        <normaloff>:/icon/Sprite/RapideAvant.png</normaloff>:/icon/Sprite/RapideAvant.png</iconset>
      </property>
      <property name="iconSize">
@@ -1089,7 +1102,7 @@ border : none ;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../Serveur/ressource.qrc">
+      <iconset resource="ressource.qrc">
        <normaloff>:/icon/Sprite/RapideDerriere.png</normaloff>:/icon/Sprite/RapideDerriere.png</iconset>
      </property>
      <property name="iconSize">
@@ -1198,7 +1211,7 @@ border : none ;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../Serveur/ressource.qrc">
+      <iconset resource="ressource.qrc">
        <normaloff>:/icon/Sprite/VolumeFull.png</normaloff>:/icon/Sprite/VolumeFull.png</iconset>
      </property>
      <property name="iconSize">
@@ -1228,7 +1241,7 @@ border : none ;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../Serveur/ressource.qrc">
+      <iconset resource="ressource.qrc">
        <normaloff>:/icon/Sprite/Muet.png</normaloff>:/icon/Sprite/Muet.png</iconset>
      </property>
      <property name="iconSize">
@@ -1283,7 +1296,7 @@ QSlider::handle {
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/Next.png</pixmap>
+      <pixmap resource="ressource.qrc">:/icon/Sprite/Next.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -1348,7 +1361,7 @@ border : none ;</string>
       <string/>
      </property>
      <property name="icon">
-      <iconset resource="../Serveur/ressource.qrc">
+      <iconset resource="ressource.qrc">
        <normaloff>:/icon/Sprite/VolumeBas.png</normaloff>:/icon/Sprite/VolumeBas.png</iconset>
      </property>
      <property name="iconSize">
@@ -1394,6 +1407,8 @@ border : none ;</string>
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="ressource.qrc"/>
+ </resources>
  <connections/>
 </ui>

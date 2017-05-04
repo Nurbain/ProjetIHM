@@ -60,13 +60,8 @@ void MainWindow::RecuperationMusique ()
         QString nom = newbtn->text();
         QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Music_clicked()));
         newbtn->setGeometry(x,y,461,25);
-        //newbtn->styleSheet() = ''
-        y = y+30;
 
-        //AddPlusPerso
-        //QIcon icon(":/icon/Sprite/plus.png");
-        //QPushButton *newplus = new QPushButton(icon,"",ui->Tab_Musique);
-        //QObject::connect(newplus, SIGNAL (clicked(bool)) , this , SLOT(Plus_clicked()));
+        y = y+30;
     }
 
     qDebug() << "la2";
@@ -83,6 +78,7 @@ void MainWindow::Music_clicked()
     params[kParamNomMusique]=cast->text();
     emit signalFromUI(kSignalChangementMusique, params);
 }
+
 
 void MainWindow::on_Player_Pause_clicked()
 {

@@ -56,6 +56,7 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
         case kSignalChangementVolume:
             mpv_json->changeVolumeOnMPV(params[kParamVolume].toInt());
             break;
+
         default:
             return;
     }

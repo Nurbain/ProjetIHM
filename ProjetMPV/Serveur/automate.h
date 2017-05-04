@@ -25,6 +25,8 @@ private:
     QState *play;
     QState *pause;
     QState *changement;
+    QState *playPlaylist;
+    QState *changementPlaylist;
 
     QState *fonction;
     QHistoryState *fonctionHistory;

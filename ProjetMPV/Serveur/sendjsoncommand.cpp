@@ -71,6 +71,21 @@ void SendJSONCommand::changeMusicOnMPV(QString musicName)
 
 }
 
+void SendJSONCommand::changePlaylistOnMPV(QString playlistName)
+{
+    QJsonObject jsonObject;
+    QJsonArray jsonArr;
+
+    // Creating the JSON message
+    jsonArr.append("loadlist");
+    jsonArr.append(playlistName);
+
+    jsonObject["command"]=jsonArr;
+
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+
+}
+
 
 /**
 * Method : changeVolumeOnMPV

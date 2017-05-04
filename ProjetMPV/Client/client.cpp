@@ -54,6 +54,9 @@ void Client::messageFromUI(signalType sig, QVariantMap params) {
     case kSignalChangementVolume:
       sendRequestToSocket(m_socket,kSignalChangementVolume,params);
       break;
+    case kSignalChangementPlaylist:
+      sendRequestToSocket(m_socket,kSignalChangementPlaylist,params);
+      break;
     default:
       break;
     }

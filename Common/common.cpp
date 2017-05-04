@@ -12,6 +12,7 @@ const char kParamMessage[]="message";
 const char kParamNomMusique[]="NomMusique";
 const char kParamVolume[]="volume";
 const char kParamProgress[]="Progress";
+const char kParamNomPlaylist[]="NomPlaylist";
 
 const char kJsonSignal[]="signal";
 const char kJsonParams[]="params";

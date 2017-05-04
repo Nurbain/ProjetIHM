@@ -110,6 +110,23 @@ void SendJSONCommand::changeVolumeOnMPV(int newVolume)
 }
 
 
+void SendJSONCommand::changeSpeedOnMPV(int newSpeed)
+{
+    QJsonObject jsonObject;
+    QJsonArray jsonArr;
+
+    // Creating the JSON message
+    jsonArr.append("set_property");
+    jsonArr.append("speed");
+    jsonArr.append(newSpeed);
+
+    jsonObject["command"]=jsonArr;
+
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+
+}
+
+
 
 /**
 * Method : setPauseOnMPV
@@ -288,6 +305,17 @@ void SendJSONCommand::obsPlayList(){
     jsonArr.append("observe_property");
     jsonArr.append(CHANGE_PLAYLIST);
     jsonArr.append("playlist");
+    jsonObject["command"]=jsonArr;
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+}
+
+void SendJSONCommand::obsTest(){
+    QJsonArray jsonArr;
+     QJsonObject jsonObject;
+    // Creating the JSON message
+    jsonArr.append("observe_property");
+    jsonArr.append(CHANGE_TEST);
+    jsonArr.append("speed");
     jsonObject["command"]=jsonArr;
     SendJSONCommand::sendRequestToMPV(jsonObject);
 }

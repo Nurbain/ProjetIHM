@@ -26,6 +26,7 @@ extern const char kJsonParams[];
 #define CHANGE_TIMEPOS 3
 #define CHANGE_TITLE 4
 #define CHANGE_PLAYLIST 5
+#define CHANGE_TEST 0
 
 enum signalType {
 	kSignalStart,
@@ -39,7 +40,8 @@ enum signalType {
     kSignalDuration,
     kSignalTimeChange,
     kSignalProgressChange,
-    kSignalSetVoisin
+    kSignalSetVoisin,
+    kSignalSpeedUp
 };
 
 enum status {

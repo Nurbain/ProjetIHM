@@ -30,6 +30,8 @@ public:
     void changePlaylistOnMPV(QString playlistName);
     void obsTitle();
     void obsPlayList();
+    void obsTest();
+    void changeSpeedOnMPV(int newSpeed);
     QLocalSocket *mpv=NULL;
 
 private:

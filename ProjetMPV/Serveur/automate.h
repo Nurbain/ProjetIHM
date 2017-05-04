@@ -26,6 +26,7 @@ private:
     QState *pause;
     QState *changement;
     QState *changementPlaylist;
+    QState *speedUp;
 
     QState *fonction;
     QHistoryState *fonctionHistory;
@@ -34,6 +35,7 @@ private:
     QSignalTransition *dePause;
     QSignalTransition *deChangement;
     QSignalTransition *deChangementPlaylist;
+    QSignalTransition *deSpeedUp;
 
 
     SendJSONCommand *mpv_json;

@@ -11,12 +11,14 @@ Automate::Automate(QObject *parent) : QObject(parent)
     pause=new QState(fonction);
     changement=new QState(fonction);
     changementPlaylist=new QState(fonction);
+    speedUp=new QState(fonction);
 
     deChangementPlaylist=changementPlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),play);
 
 
 
     dePlay=play->addTransition(this,SIGNAL(signalPause()),pause);
+    dePlay=play->addTransition(this,SIGNAL(signalSpeed()),speedUp);
     dePlay=play->addTransition(this,SIGNAL(signalChangement()),changement);
     dePlay=play->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
 
@@ -25,6 +27,8 @@ Automate::Automate(QObject *parent) : QObject(parent)
     dePause=pause->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
 
     deChangement=changement->addTransition(this,SIGNAL(signalChangement()),play);
+
+    deSpeedUp=speedUp->addTransition(this,SIGNAL(signalSpeed()),play);
 
     mpv_json = new SendJSONCommand();
 
@@ -49,6 +53,7 @@ void Automate::start(bool on){
     mpv_json->obsTimeChange();
     mpv_json->obsTitle();
     mpv_json->obsPlayList();
+    mpv_json->obsTest();
 
     fonction->setInitialState(pause);
     machine->setInitialState(fonction);
@@ -124,13 +129,18 @@ void Automate::readSocket(){
                     emit signalToUI(kSignalProgress,params);
                     emit signalMachine(kSignalProgress,params);
                     break;
+                case CHANGE_TEST:
+                      qDebug() << jObj;
+                      break;
                 case CHANGE_DURATION:
                     params[kParamDuration]=QVariant(jObj["data"].toDouble());
                     emit signalToUI(kSignalDuration,params);
+                    emit signalMachine(kSignalDuration,params);
                     break;
                 case CHANGE_TIMEPOS:
                     params[kParamTimeChange]=QVariant(jObj["data"].toDouble());
                     emit signalToUI(kSignalTimeChange,params);
+                    emit signalMachine(kSignalTimeChange,params);
                     break;
                  case CHANGE_TITLE:
                     params[kParamNomMusique]=QVariant(jObj["data"].toString());

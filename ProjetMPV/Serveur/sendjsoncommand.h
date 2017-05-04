@@ -24,6 +24,8 @@ public:
     void getVolumeFromMPV();
     void obsProgress();
     void getPosFromMPV();
+    void obsDuration();
+    void obsTimeChange();
     void changePlaylistOnMPV(QString playlistName);
     QLocalSocket *mpv=NULL;
 

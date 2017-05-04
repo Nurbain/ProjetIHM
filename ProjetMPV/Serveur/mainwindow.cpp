@@ -24,6 +24,12 @@ void MainWindow::message(signalType sig, QVariantMap params){
         case kSignalProgress:
             ui->Serveur_Slider->setSliderPosition(params[kParamProgress].toInt());
             break;
+        case kSignalDuration:
+            ui->Serveur_MusicTemps->setText(QString::number((int)(params[kParamDuration].toDouble()/60))+":"+QString::number((int)(params[kParamDuration].toDouble())%60));
+            break;
+        case kSignalTimeChange:
+            ui->Serveur_MusicAvancement->setText(QString::number((int)(params[kParamTimeChange].toDouble()/60))+":"+QString::number((int)(params[kParamTimeChange].toDouble())%60));
+            break;
 
     }
 

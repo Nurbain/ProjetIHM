@@ -195,8 +195,8 @@ void MainWindow::setProgress(int value)
 
 void MainWindow::on_Player_Pause_clicked()
 {
-    ui->Player_Pause->setVisible(false);
-    ui->Player_Play->setVisible(true);
+    /*ui->Player_Pause->setVisible(false);
+    ui->Player_Play->setVisible(true);*/
     qDebug() << "pause";
     QVariantMap params;
     params[kParamSwitch]=false;
@@ -205,8 +205,8 @@ void MainWindow::on_Player_Pause_clicked()
 
 void MainWindow::on_Player_Play_clicked()
 {
-    ui->Player_Pause->setVisible(true);
-    ui->Player_Play->setVisible(false);
+    /*ui->Player_Pause->setVisible(true);
+    ui->Player_Play->setVisible(false);*/
     qDebug() << "play";
     QVariantMap params;
     params[kParamSwitch]=true;

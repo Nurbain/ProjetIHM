@@ -247,6 +247,28 @@ void SendJSONCommand::obsProgress(){
     SendJSONCommand::sendRequestToMPV(jsonObject);
 }
 
+void SendJSONCommand::obsDuration(){
+    QJsonArray jsonArr;
+     QJsonObject jsonObject;
+    // Creating the JSON message
+    jsonArr.append("observe_property");
+    jsonArr.append(CHANGE_DURATION);
+    jsonArr.append("duration");
+    jsonObject["command"]=jsonArr;
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+}
+
+void SendJSONCommand::obsTimeChange(){
+    QJsonArray jsonArr;
+     QJsonObject jsonObject;
+    // Creating the JSON message
+    jsonArr.append("observe_property");
+    jsonArr.append(CHANGE_TIMEPOS);
+    jsonArr.append("time-pos");
+    jsonObject["command"]=jsonArr;
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+}
+
 
 
 

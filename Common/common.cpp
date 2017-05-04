@@ -13,6 +13,8 @@ const char kParamNomMusique[]="NomMusique";
 const char kParamVolume[]="volume";
 const char kParamProgress[]="Progress";
 const char kParamNomPlaylist[]="NomPlaylist";
+const char kParamDuration[]="Duration";
+const char kParamTimeChange[]="TimeChange";
 
 const char kJsonSignal[]="signal";
 const char kJsonParams[]="params";

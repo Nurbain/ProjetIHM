@@ -45,6 +45,8 @@ void Automate::start(bool on){
     QObject::connect(changementPlaylist,SIGNAL(entered()),this,SLOT(changementPlaylistFct()));
 
     mpv_json->obsProgress();
+    mpv_json->obsDuration();
+    mpv_json->obsTimeChange();
 
     fonction->setInitialState(pause);
     machine->setInitialState(fonction);
@@ -58,6 +60,7 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             break;
         case kSignalPause:
             emit signalPause();
+            emit signalMachine(kSignalPause,params);
             break;
         case kSignalChangementMusique:
             qDebug("On change");
@@ -115,7 +118,17 @@ void Automate::readSocket(){
                     params[kParamProgress]=QVariant((int)jObj["data"].toDouble());
                     emit signalToUI(kSignalProgress,params);
                     emit signalMachine(kSignalProgress,params);
-                break;
+                    break;
+                case CHANGE_DURATION:
+                    qDebug() << jObj;
+                    params[kParamDuration]=QVariant(jObj["data"].toDouble());
+                    emit signalToUI(kSignalDuration,params);
+                    break;
+                case CHANGE_TIMEPOS:
+                    qDebug() << jObj;
+                    params[kParamTimeChange]=QVariant(jObj["data"].toDouble());
+                    emit signalToUI(kSignalTimeChange,params);
+                    break;
             }
         }
     }

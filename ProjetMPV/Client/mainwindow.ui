@@ -1146,7 +1146,7 @@ background-color: rgb(238, 238, 236);
 </string>
        </property>
        <property name="text">
-        <string>Connection</string>
+        <string>Connexion</string>
        </property>
        <property name="icon">
         <iconset resource="../Serveur/ressource.qrc">

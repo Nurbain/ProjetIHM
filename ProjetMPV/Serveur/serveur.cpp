@@ -32,8 +32,8 @@ void Serveur::startServer(bool on){
             return;
         }
         else{
-            mpv_json->changeMusicOnMPV("test.mp3");
-            qDebug() << "Morceau lancé !";
+            //mpv_json->changeMusicOnMPV("test.mp3");
+            //qDebug() << "Morceau lancé !";
             QVariantMap params;
             params[kParamSwitch]=QVariant(true);
             params[kParamStatus]=QVariant(kStatusStarted);

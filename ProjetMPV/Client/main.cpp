@@ -27,6 +27,10 @@ int main(int argc, char *argv[])
 
     c.messageFromUI(kSignalConnectToServer,params);
 
+    params[kParamNomMusique]="../Musique/vexento-busy-mind.mp3";
+
+    c.messageFromUI(kSignalChangementMusique,params);
+
 
     return a.exec();
 }

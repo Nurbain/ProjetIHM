@@ -70,8 +70,8 @@ void MainWindow::RecuperationMusique ()
     QFileInfoList fileList;
 
     QStringList nomFichier;
-    int x = 90;
-    int y = 20;
+    int x = 20;
+    int y = 10;
     // Tant qu'on n'est pas arrivé à la fin de l'arborescence...
     while(dirIterator.hasNext())
     {
@@ -84,10 +84,10 @@ void MainWindow::RecuperationMusique ()
 
         QString nom = file.fileName();
         nom.resize(nom.size()-4);
-        QPushButton *newbtn = new QPushButton (nom, ui->Tab_Musique);
+        QPushButton *newbtn = new QPushButton (nom, ui->Musique_scroll);
         newbtn->text() = nom;
         QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Music_clicked()));
-        newbtn->setGeometry(x,y,461,25);
+        newbtn->setGeometry(x,y,470,25);
 
         y = y+30;
     }
@@ -95,7 +95,7 @@ void MainWindow::RecuperationMusique ()
     QDir dir_path(Dir);
     dir_path.setFilter((QDir::AllDirs));
     QStringList Alldir = dir_path.entryList();
-    int xDir = 110 , yDir = 20 , largeDir = 200, hauteurDir = 20;
+    int xDir = 20 , yDir = 20 , largeDir = 200, hauteurDir = 20;
     for(int i = 0 ; i<Alldir.size() ; i++)
     {
 
@@ -105,7 +105,7 @@ void MainWindow::RecuperationMusique ()
             QDir::setCurrent(newpath);
             QDirIterator dirIterator2(newpath, listFilter , QDir::Files | QDir::NoSymLinks );
 
-            QPushButton *playList = new QPushButton (Alldir.at(i), ui->Tab_PlayList);
+            QPushButton *playList = new QPushButton (Alldir.at(i), ui->PlayListScroll);
             playList->setGeometry(xDir,yDir , largeDir , hauteurDir);
             QObject::connect(playList, SIGNAL (clicked(bool)) ,this , SLOT(PlayList_clicked()));
 
@@ -113,7 +113,7 @@ void MainWindow::RecuperationMusique ()
             {
                 yDir = yDir+20;
                 QFileInfo file(dirIterator2.next());
-                QLabel *titre  =new QLabel(file.fileName() , ui->Tab_PlayList);
+                QLabel *titre  =new QLabel(file.fileName() , ui->PlayListScroll);
                 QString nom = file.fileName();
                 nom.resize(nom.size()-4);
                 titre->setText("- "+nom);
@@ -142,8 +142,8 @@ void MainWindow::RecuperationRadio ()
      QFileInfoList fileList;
      QStringList nomFichier;
 
-     int x = 90;
-     int y = 20;
+     int x = 20;
+     int y = 10;
 
      while(dirIterator.hasNext())
      {
@@ -156,10 +156,10 @@ void MainWindow::RecuperationRadio ()
 
          QString nom = file.fileName();
          nom.resize(nom.size()-4);
-         QPushButton *newbtn = new QPushButton (nom, ui->Tab_Radio);
+         QPushButton *newbtn = new QPushButton (nom, ui->Radio_scroll);
          newbtn->text() = nom;
          QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Radio_clicked()));
-         newbtn->setGeometry(x,y,461,25);
+         newbtn->setGeometry(x,y,470,25);
          y = y+30;
      }
 }
@@ -282,9 +282,7 @@ void MainWindow::on_Param_Eng_clicked()
     ui->BtnMenu_Play->setText("PlayList");
     ui->BtnMenu_Radio->setText("Radio");
     ui->BtnMenu_Attente->setText("Waiting");
-    ui->BtnMenu_serveur->setText("Server");
     ui->BtnMenu_Param->setText("Settings");
-    ui->Param_other->setText("high quality");
     ui->Param_Serveur->setText("Connexion");
     ui->Param_Langue->setText("Language");
 }
@@ -295,10 +293,8 @@ void MainWindow::on_Param_Fr_clicked()
     ui->BtnMenu_Music->setText("Musique");
     ui->BtnMenu_Play->setText("PlayList");
     ui->BtnMenu_Radio->setText("Radio");
-    ui->BtnMenu_Attente->setText("Attente");
-    ui->BtnMenu_serveur->setText("Serveur");
+    ui->BtnMenu_Attente->setText("Attente"); 
     ui->BtnMenu_Param->setText("Parametre");
-    ui->Param_other->setText("Haute qualité");
     ui->Param_Serveur->setText("Serveur");
     ui->Param_Langue->setText("Langue");
 }
@@ -310,9 +306,7 @@ void MainWindow::on_Param_Esp_clicked()
     ui->BtnMenu_Play->setText("PlayList");
     ui->BtnMenu_Radio->setText("Radio");
     ui->BtnMenu_Attente->setText("Espera");
-    ui->BtnMenu_serveur->setText("Servidor");
     ui->BtnMenu_Param->setText("Paràmetro");
-    ui->Param_other->setText("Alta calidad");
     ui->Param_Serveur->setText("Connexion");
     ui->Param_Langue->setText("lenga");
 }
@@ -325,12 +319,12 @@ void MainWindow::on_BtnMenu_Music_clicked()
 
 void MainWindow::on_BtnMenu_Play_clicked()
 {
-    ui->TabInteraction->setCurrentIndex(4);
+    ui->TabInteraction->setCurrentIndex(3);
 }
 
 void MainWindow::on_BtnMenu_Attente_clicked()
 {
-    ui->TabInteraction->setCurrentIndex(5);
+    ui->TabInteraction->setCurrentIndex(4);
 }
 
 
@@ -340,14 +334,9 @@ void MainWindow::on_BtnMenu_Radio_clicked()
 }
 
 
-void MainWindow::on_BtnMenu_serveur_clicked()
-{
-     ui->TabInteraction->setCurrentIndex(2);
-}
-
 void MainWindow::on_BtnMenu_Param_clicked()
 {
-     ui->TabInteraction->setCurrentIndex(3);
+     ui->TabInteraction->setCurrentIndex(1);
 }
 
 void MainWindow::on_Player_Volume_valueChanged(int value)

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>854</width>
-    <height>512</height>
+    <height>433</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,71 +26,13 @@
       <x>0</x>
       <y>0</y>
       <width>851</width>
-      <height>441</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="currentIndex">
      <number>0</number>
     </property>
     <widget class="QWidget" name="Connect">
-     <widget class="QPushButton" name="BtnMenu_serveur">
-      <property name="enabled">
-       <bool>true</bool>
-      </property>
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>300</y>
-        <width>240</width>
-        <height>70</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>22</pointsize>
-       </font>
-      </property>
-      <property name="autoFillBackground">
-       <bool>false</bool>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-border : none;
-background-color: rgb(54, 54, 54);
-color: rgb(235, 235, 235);
-}
-
-QPushButton:hover{
-background-color: rgb(38, 38, 38);
-color: rgb(255, 255, 255);
-}
-
-QPushButton:pressed{
-background-color: rgb(38, 38, 38);
-color: rgb(255, 255, 255);
-}
-</string>
-      </property>
-      <property name="text">
-       <string>Enceinte</string>
-      </property>
-      <property name="icon">
-       <iconset resource="ressource.qrc">
-        <normaloff>:/icon/Sprite/vueMenu.png</normaloff>:/icon/Sprite/vueMenu.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>32</width>
-        <height>32</height>
-       </size>
-      </property>
-     </widget>
      <widget class="QPushButton" name="BtnMenu_Attente">
       <property name="enabled">
        <bool>true</bool>
@@ -336,7 +278,7 @@ color: rgb(255, 255, 255);
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>370</y>
+        <y>300</y>
         <width>240</width>
         <height>70</height>
        </rect>
@@ -807,11 +749,11 @@ border-bottom-left-radius: 0px;
         <x>250</x>
         <y>140</y>
         <width>601</width>
-        <height>301</height>
+        <height>231</height>
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="Tab_Musique">
        <property name="styleSheet">
@@ -835,6 +777,29 @@ border-bottom-left-radius: 0px;
         <property name="scaledContents">
          <bool>true</bool>
         </property>
+       </widget>
+       <widget class="QScrollArea" name="Musique_scroll">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>10</y>
+          <width>511</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>509</width>
+           <height>209</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="Tab_Radio">
@@ -860,251 +825,29 @@ border-bottom-left-radius: 0px;
          <bool>true</bool>
         </property>
        </widget>
-      </widget>
-      <widget class="QWidget" name="Tab_Serveur">
-       <widget class="QLabel" name="Param_Icon_5">
+       <widget class="QScrollArea" name="Radio_scroll">
         <property name="geometry">
          <rect>
-          <x>20</x>
+          <x>80</x>
           <y>10</y>
-          <width>51</width>
-          <height>51</height>
+          <width>511</width>
+          <height>211</height>
          </rect>
         </property>
-        <property name="styleSheet">
-         <string notr="true">background:transparent;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/vueMenu.png</pixmap>
-        </property>
-        <property name="scaledContents">
+        <property name="widgetResizable">
          <bool>true</bool>
         </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>509</width>
+           <height>209</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>120</y>
-          <width>41</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:transparent;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>550</x>
-          <y>120</y>
-          <width>41</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background:transparent;</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
-        </property>
-        <property name="scaledContents">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="Serveur_MusicBefore_2">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>80</y>
-          <width>201</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background : transparent;
-color : white ;
-
-</string>
-        </property>
-        <property name="text">
-         <string>Musique before</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="Serveur_MusicBefore_3">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>80</y>
-          <width>151</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background : transparent;
-color : white ;
-
-</string>
-        </property>
-        <property name="text">
-         <string>Musique After</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="Serveur_MusicBefore_4">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>200</y>
-          <width>211</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background : transparent;
-color : white ;
-
-</string>
-        </property>
-        <property name="text">
-         <string>Musique Maintenant</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_4">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>601</width>
-          <height>301</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
-        </property>
-       </widget>
-       <widget class="QSlider" name="horizontalSlider">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>230</y>
-          <width>401</width>
-          <height>22</height>
-         </rect>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QSlider::groove:horizontal {
-	background-color: rgb(0, 0, 0);
-	height : 6px;
-	border: 1px solid black;
-}
-
-QSlider::handle { 
-	background :rgb(200, 200, 200);
-	width: 14px;
-	margin : -4px 0;
-	border : 1px solid gray ;
-	border-radius : 7px;
-}
-
-QSlider::sub-page:qlineargradient {
-background: rgb(110, 200, 255);
-border-top-right-radius: 0px;
-border-bottom-right-radius: 0px;
-border-top-left-radius: 9px;
-border-bottom-left-radius: 9px;
-}
-
-
-QSlider::add-page:qlineargradient {
-background:white;
-border-top-right-radius: 9px;
-border-bottom-right-radius: 9px;
-border-top-left-radius: 0px;
-border-bottom-left-radius: 0px;
-}
-
-</string>
-        </property>
-        <property name="value">
-         <number>11</number>
-        </property>
-        <property name="tracking">
-         <bool>true</bool>
-        </property>
-        <property name="orientation">
-         <enum>Qt::Horizontal</enum>
-        </property>
-       </widget>
-       <widget class="QLabel" name="Serveur_MusicBefore_5">
-        <property name="geometry">
-         <rect>
-          <x>420</x>
-          <y>250</y>
-          <width>101</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">background : transparent;
-color : white ;
-
-</string>
-        </property>
-        <property name="text">
-         <string>1.05/3.33</string>
-        </property>
-       </widget>
-       <zorder>label_4</zorder>
-       <zorder>Param_Icon_5</zorder>
-       <zorder>label_2</zorder>
-       <zorder>label_3</zorder>
-       <zorder>Serveur_MusicBefore_2</zorder>
-       <zorder>Serveur_MusicBefore_3</zorder>
-       <zorder>Serveur_MusicBefore_4</zorder>
-       <zorder>horizontalSlider</zorder>
-       <zorder>Serveur_MusicBefore_5</zorder>
       </widget>
       <widget class="QWidget" name="Tab_Parametre">
        <property name="styleSheet">
@@ -1267,28 +1010,6 @@ qproperty-alignment : AlignRight;</string>
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
-       <widget class="QLabel" name="Param_other">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>240</y>
-          <width>151</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>16</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(130, 130, 130);
-qproperty-alignment : AlignRight;</string>
-        </property>
-        <property name="text">
-         <string>Haute Qualité</string>
-        </property>
-       </widget>
        <widget class="Line" name="line2">
         <property name="geometry">
          <rect>
@@ -1344,19 +1065,6 @@ qproperty-alignment : AlignRight;</string>
          <bool>true</bool>
         </property>
        </widget>
-       <widget class="QCheckBox" name="Param_CheckHD">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>253</y>
-          <width>21</width>
-          <height>17</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
       </widget>
       <widget class="QWidget" name="Tab_PlayList">
        <property name="styleSheet">
@@ -1380,6 +1088,29 @@ qproperty-alignment : AlignRight;</string>
         <property name="scaledContents">
          <bool>true</bool>
         </property>
+       </widget>
+       <widget class="QScrollArea" name="PlayListScroll">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>10</y>
+          <width>511</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="scrollAreaWidgetContents_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>509</width>
+           <height>209</height>
+          </rect>
+         </property>
+        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="Tab_Attente">

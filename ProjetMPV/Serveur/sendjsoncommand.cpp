@@ -250,10 +250,8 @@ void SendJSONCommand::getPosFromMPV()
     QByteArray line = mpv->readLine().trimmed();
 
     // If we got something
-    QJsonParseError error;
     QJsonDocument jDoc = QJsonDocument::fromJson(line);
     QJsonObject jObj = jDoc.object();
-    //std::cout << qPrintable(jObj["error"].toString());
     qDebug() << jObj;
 }
 

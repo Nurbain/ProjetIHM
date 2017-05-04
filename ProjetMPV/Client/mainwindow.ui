@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Connect">
      <widget class="QPushButton" name="BtnMenu_Attente">
@@ -81,7 +81,7 @@ color: rgb(255, 255, 255);
        <string>Attente</string>
       </property>
       <property name="icon">
-       <iconset resource="ressource.qrc">
+       <iconset resource="../Serveur/ressource.qrc">
         <normaloff>:/icon/Sprite/attenteMenu.png</normaloff>:/icon/Sprite/attenteMenu.png</iconset>
       </property>
       <property name="iconSize">
@@ -139,7 +139,7 @@ color: rgb(255, 255, 255);
        <string>Musique</string>
       </property>
       <property name="icon">
-       <iconset resource="ressource.qrc">
+       <iconset resource="../Serveur/ressource.qrc">
         <normaloff>:/icon/Sprite/PlayMenu.png</normaloff>:/icon/Sprite/PlayMenu.png</iconset>
       </property>
       <property name="iconSize">
@@ -203,7 +203,7 @@ color: rgb(255, 255, 255);
        <string>PlayList</string>
       </property>
       <property name="icon">
-       <iconset resource="ressource.qrc">
+       <iconset resource="../Serveur/ressource.qrc">
         <normaloff>:/icon/Sprite/playlistMenu.png</normaloff>:/icon/Sprite/playlistMenu.png</iconset>
       </property>
       <property name="iconSize">
@@ -261,7 +261,7 @@ color: rgb(255, 255, 255);
        <string>Radio</string>
       </property>
       <property name="icon">
-       <iconset resource="ressource.qrc">
+       <iconset resource="../Serveur/ressource.qrc">
         <normaloff>:/icon/Sprite/RadioMenu.png</normaloff>:/icon/Sprite/RadioMenu.png</iconset>
       </property>
       <property name="iconSize">
@@ -351,7 +351,7 @@ border : none ;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="ressource.qrc">
+        <iconset resource="../Serveur/ressource.qrc">
          <normaloff>:/icon/Sprite/Play.png</normaloff>:/icon/Sprite/Play.png</iconset>
        </property>
        <property name="iconSize">
@@ -381,7 +381,7 @@ border : none ;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="ressource.qrc">
+        <iconset resource="../Serveur/ressource.qrc">
          <normaloff>:/icon/Sprite/pause.png</normaloff>:/icon/Sprite/pause.png</iconset>
        </property>
        <property name="iconSize">
@@ -411,7 +411,7 @@ border : none ;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="ressource.qrc">
+        <iconset resource="../Serveur/ressource.qrc">
          <normaloff>:/icon/Sprite/RapideAvant.png</normaloff>:/icon/Sprite/RapideAvant.png</iconset>
        </property>
        <property name="iconSize">
@@ -454,7 +454,7 @@ border : none ;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="ressource.qrc">
+        <iconset resource="../Serveur/ressource.qrc">
          <normaloff>:/icon/Sprite/VolumeFull.png</normaloff>:/icon/Sprite/VolumeFull.png</iconset>
        </property>
        <property name="iconSize">
@@ -484,7 +484,7 @@ border : none ;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="ressource.qrc">
+        <iconset resource="../Serveur/ressource.qrc">
          <normaloff>:/icon/Sprite/Muet.png</normaloff>:/icon/Sprite/Muet.png</iconset>
        </property>
        <property name="iconSize">
@@ -562,7 +562,7 @@ border : none ;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="ressource.qrc">
+        <iconset resource="../Serveur/ressource.qrc">
          <normaloff>:/icon/Sprite/VolumeBas.png</normaloff>:/icon/Sprite/VolumeBas.png</iconset>
        </property>
        <property name="iconSize">
@@ -723,7 +723,7 @@ border-bottom-left-radius: 0px;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/Play.png</pixmap>
+         <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/Play.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -770,7 +770,7 @@ border-bottom-left-radius: 0px;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/Radio.png</pixmap>
+         <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/Radio.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -820,7 +820,7 @@ border-bottom-left-radius: 0px;
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/settings.png</pixmap>
+         <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/settings.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -843,7 +843,7 @@ border : none ;</string>
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="ressource.qrc">
+         <iconset resource="../Serveur/ressource.qrc">
           <normaloff>:/icon/Sprite/Drapeau-anglais.png</normaloff>:/icon/Sprite/Drapeau-anglais.png</iconset>
         </property>
         <property name="iconSize">
@@ -870,7 +870,7 @@ border : none ;</string>
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="ressource.qrc">
+         <iconset resource="../Serveur/ressource.qrc">
           <normaloff>:/icon/Sprite/espagnole.png</normaloff>:/icon/Sprite/espagnole.png</iconset>
         </property>
         <property name="iconSize">
@@ -897,7 +897,7 @@ border : none ;</string>
          <string/>
         </property>
         <property name="icon">
-         <iconset resource="ressource.qrc">
+         <iconset resource="../Serveur/ressource.qrc">
           <normaloff>:/icon/Sprite/drapeau-francais.png</normaloff>:/icon/Sprite/drapeau-francais.png</iconset>
         </property>
         <property name="iconSize">
@@ -1037,7 +1037,7 @@ qproperty-alignment : AlignRight;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/playlist.png</pixmap>
+         <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/playlist.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -1087,7 +1087,7 @@ qproperty-alignment : AlignRight;</string>
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap resource="ressource.qrc">:/icon/Sprite/attente.png</pixmap>
+         <pixmap resource="../Serveur/ressource.qrc">:/icon/Sprite/attente.png</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>
@@ -1149,7 +1149,7 @@ background-color: rgb(238, 238, 236);
         <string>Connection</string>
        </property>
        <property name="icon">
-        <iconset resource="ressource.qrc">
+        <iconset resource="../Serveur/ressource.qrc">
          <normaloff>:/icon/Sprite/Play.png</normaloff>:/icon/Sprite/Play.png</iconset>
        </property>
        <property name="iconSize">
@@ -1162,9 +1162,9 @@ background-color: rgb(238, 238, 236);
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>330</x>
+         <x>290</x>
          <y>40</y>
-         <width>181</width>
+         <width>271</width>
          <height>61</height>
         </rect>
        </property>
@@ -1179,7 +1179,7 @@ background-color: rgb(238, 238, 236);
         <string notr="true"/>
        </property>
        <property name="text">
-        <string>IHM MUSIC</string>
+        <string>IHM MUSIQUE</string>
        </property>
       </widget>
      </widget>
@@ -1192,7 +1192,7 @@ background-color: rgb(238, 238, 236);
      <x>0</x>
      <y>0</y>
      <width>854</width>
-     <height>22</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>
@@ -1208,7 +1208,7 @@ background-color: rgb(238, 238, 236);
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="ressource.qrc"/>
+  <include location="../Serveur/ressource.qrc"/>
  </resources>
  <connections>
   <connection>

@@ -9,6 +9,7 @@
 #include <QSignalTransition>
 #include <QTimer>
 #include <QDebug>
+#include <QtConcurrent/QtConcurrent>
 #include "sendjsoncommand.h"
 #include "../../Common/common.h"
 

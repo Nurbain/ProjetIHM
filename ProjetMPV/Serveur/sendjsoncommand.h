@@ -23,6 +23,7 @@ public:
     void quitMPVServer();
     void getVolumeFromMPV();
     void obsProgress();
+    void getPosFromMPV();
     QLocalSocket *mpv=NULL;
 
 private:

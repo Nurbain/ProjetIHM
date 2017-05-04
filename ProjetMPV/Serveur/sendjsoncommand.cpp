@@ -190,6 +190,33 @@ void SendJSONCommand::getVolumeFromMPV()
     qDebug() << jObj;
 }
 
+void SendJSONCommand::getPosFromMPV()
+{
+    // Send the request to mpv
+    QJsonObject jsonObject;
+    QJsonArray jsonArr;
+
+    // Creating the JSON message
+    jsonArr.append("get_property");
+    jsonArr.append("duration");
+
+    jsonObject["command"]=jsonArr;
+    qDebug() << jsonObject;
+
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+
+
+    // Get the result of the call on MPV server
+    QByteArray line = mpv->readLine().trimmed();
+
+    // If we got something
+    QJsonParseError error;
+    QJsonDocument jDoc = QJsonDocument::fromJson(line, &error);
+    QJsonObject jObj = jDoc.object();
+    //std::cout << qPrintable(jObj["error"].toString());
+    qDebug() << jObj;
+}
+
 
 void SendJSONCommand::obsProgress(){
     QJsonArray jsonArr;

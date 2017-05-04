@@ -1,4 +1,5 @@
 #include "automate.h"
+#include <QThread>
 
 Automate::Automate(QObject *parent) : QObject(parent)
 {
@@ -66,11 +67,10 @@ void Automate::changementMusique(){
 void Automate::playMusique(){
 
     mpv_json->setPauseOnMPV(false);
-
-
 }
 
 void Automate::pauseMusique(){
-    mpv_json->getVolumeFromMPV();
+    mpv_json->getPosFromMPV();
     mpv_json->setPauseOnMPV(true);
 }
+

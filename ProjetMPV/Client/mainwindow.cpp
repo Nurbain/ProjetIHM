@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QIcon>
+#include <QPixmap>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -32,6 +33,7 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
             setConnection();
             break;
         case kSignalPause:
+            qDebug() << "PauseEasy";
             setPause();
             break;
         case kSignalChangementMusique:
@@ -43,6 +45,14 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
             break;
         case kSignalProgress:
             setProgress(params[kParamProgress].toInt());
+            break;
+        case kSignalDuration:
+            qDebug() << "ici";
+            setInfoDure(QString::number((int)(params[kParamDuration].toDouble()/60))+":"+QString::number((int)(params[kParamDuration].toDouble())%60));
+            break;
+        case kSignalTimeChange:
+            qDebug() << "ici2";
+            setInfoAdvance(QString::number((int)(params[kParamTimeChange].toDouble()/60))+":"+QString::number((int)(params[kParamTimeChange].toDouble())%60));
             break;
         default:
             return;
@@ -106,7 +116,10 @@ void MainWindow::RecuperationMusique ()
             QDir::setCurrent(newpath);
             QDirIterator dirIterator2(newpath, listFilter , QDir::Files | QDir::NoSymLinks );
 
+            QPixmap image(":/icon/Sprite/dropdown.png");
+            QIcon icon(image);
             QPushButton *playList = new QPushButton (Alldir.at(i));
+            playList->setIcon(icon);
             lay2->addWidget(playList);
             QObject::connect(playList, SIGNAL (clicked(bool)) ,this , SLOT(PlayList_clicked()));
 
@@ -250,6 +263,15 @@ void MainWindow::setInfos(QString nom)
     ui->Player_Chanson->setText(nom);
 }
 
+void MainWindow::setInfoDure(QString dure)
+{
+    ui->player_Duration->setText(dure);
+}
+
+void MainWindow::setInfoAdvance(QString temps)
+{
+    ui->Player_Temps->setText(temps);
+}
 
 
 void MainWindow::on_Player_Pause_clicked()

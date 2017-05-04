@@ -24,6 +24,8 @@ private:
     void RecuperationMusique ();
     void RecuperationRadio();
     void setPause();
+    void setInfoDure(QString dure);
+    void setInfoAdvance(QString temps);
     void setVolume(int value);
     void setConnection();
     void setProgress(int value);

@@ -688,10 +688,10 @@ border-bottom-left-radius: 0px;
       <widget class="QLabel" name="player_Duration">
        <property name="geometry">
         <rect>
-         <x>470</x>
+         <x>464</x>
          <y>20</y>
          <width>41</width>
-         <height>16</height>
+         <height>20</height>
         </rect>
        </property>
        <property name="font">
@@ -709,10 +709,10 @@ border-bottom-left-radius: 0px;
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>450</x>
+         <x>453</x>
          <y>20</y>
-         <width>16</width>
-         <height>16</height>
+         <width>10</width>
+         <height>20</height>
         </rect>
        </property>
        <property name="font">
@@ -727,7 +727,7 @@ border-bottom-left-radius: 0px;
       <widget class="QLabel" name="Player_Temps">
        <property name="geometry">
         <rect>
-         <x>410</x>
+         <x>417</x>
          <y>20</y>
          <width>41</width>
          <height>20</height>
@@ -742,6 +742,22 @@ border-bottom-left-radius: 0px;
         <string>0.00</string>
        </property>
       </widget>
+      <zorder>Player_Play</zorder>
+      <zorder>Player_Pause</zorder>
+      <zorder>Player_Avance</zorder>
+      <zorder>Player_recule</zorder>
+      <zorder>Player_Chanson</zorder>
+      <zorder>Player_MaxVol</zorder>
+      <zorder>Player_Muet</zorder>
+      <zorder>Player_Volume</zorder>
+      <zorder>Player_Next</zorder>
+      <zorder>Player_Nextmusic</zorder>
+      <zorder>line</zorder>
+      <zorder>Player_MinVol</zorder>
+      <zorder>Player_ProgressBar</zorder>
+      <zorder>player_Duration</zorder>
+      <zorder>Player_Temps</zorder>
+      <zorder>label_6</zorder>
      </widget>
      <widget class="QStackedWidget" name="TabInteraction">
       <property name="geometry">
@@ -833,6 +849,9 @@ border-bottom-left-radius: 0px;
           <width>511</width>
           <height>211</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
         </property>
         <property name="widgetResizable">
          <bool>true</bool>
@@ -1189,6 +1208,28 @@ qproperty-alignment : AlignRight;</string>
        <string>IHM MUSIC</string>
       </property>
      </widget>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>-20</y>
+        <width>851</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string>GroupBox</string>
+      </property>
+     </widget>
+     <zorder>groupBox</zorder>
+     <zorder>pushButton_2</zorder>
+     <zorder>label</zorder>
     </widget>
    </widget>
   </widget>

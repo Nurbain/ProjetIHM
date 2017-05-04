@@ -33,7 +33,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
+     <pixmap resource="ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -73,7 +73,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
+     <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -92,7 +92,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
+     <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -185,7 +185,7 @@ border-bottom-left-radius: 0px;
      <rect>
       <x>130</x>
       <y>250</y>
-      <width>201</width>
+      <width>541</width>
       <height>31</height>
      </rect>
     </property>
@@ -271,7 +271,7 @@ border-bottom-left-radius: 0px;
      <x>0</x>
      <y>0</y>
      <width>831</width>
-     <height>19</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -287,7 +287,7 @@ border-bottom-left-radius: 0px;
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="../Client/ressource.qrc"/>
+  <include location="ressource.qrc"/>
  </resources>
  <connections/>
 </ui>

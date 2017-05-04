@@ -68,9 +68,10 @@ void MainWindow::RecuperationMusique ()
     QDir dir_path(Dir);
     dir_path.setFilter((QDir::AllDirs));
     QStringList Alldir = dir_path.entryList();
+    int xDir = 110 , yDir = 20 , largeDir = 200, hauteurDir = 20;
     for(int i = 0 ; i<Alldir.size() ; i++)
     {
-         int xDir = 110 , yDir = 20 , largeDir = 200, hauteurDir = 20;
+
         if(Alldir.at(i) != "." && Alldir.at(i) != "..")
         {
             QString newpath = Dir+"/"+Alldir.at(i);
@@ -90,7 +91,7 @@ void MainWindow::RecuperationMusique ()
 
 
             }
-            yDir = yDir+20;
+            yDir = yDir+50;
         }
 
 

@@ -18,6 +18,8 @@ public:
     ~SendJSONCommand();
     void changeMusicOnMPV(QString musicName);
     void changeVolumeOnMPV(int newVolume);
+    void ajoutPlayListMusique(QString playList , QString Music);
+    void CreationPlayList(QString playList);
     void setPauseOnMPV(bool newValue);
     void setStopOnMPV();
     void quitMPVServer();

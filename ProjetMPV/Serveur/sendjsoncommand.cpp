@@ -93,6 +93,38 @@ void SendJSONCommand::changeVolumeOnMPV(int newVolume)
 
 }
 
+/**
+* Method : ajoutPlayListMusique
+* Param : string playList , string Musique
+* Desc : Ajoute une music a une playlist
+* Return : void
+**/
+void SendJSONCommand::ajoutPlayListMusique(QString playList , QString Music)
+{
+    QJsonObject jsonObject;
+    QJsonArray jsonArr;
+
+    // Creating the JSON message
+    jsonArr.append("loadfile");
+    jsonArr.append(Music);
+    jsonArr.append("--playlist="+playList);
+
+    jsonObject["command"]=jsonArr;
+
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+}
+
+/**
+* Method : CreationPlayList
+* Param : string playListNom
+* Desc : Ajoute une music a une playlist
+* Return : void
+**/
+void SendJSONCommand::CreationPlayList(QString playList)
+{
+
+}
+
 
 /**
 * Method : setPauseOnMPV
@@ -198,7 +230,8 @@ void SendJSONCommand::getPosFromMPV()
 
     // Creating the JSON message
     jsonArr.append("get_property");
-    jsonArr.append("duration");
+    jsonArr.append("time-pos");
+
 
     jsonObject["command"]=jsonArr;
     qDebug() << jsonObject;
@@ -211,7 +244,7 @@ void SendJSONCommand::getPosFromMPV()
 
     // If we got something
     QJsonParseError error;
-    QJsonDocument jDoc = QJsonDocument::fromJson(line, &error);
+    QJsonDocument jDoc = QJsonDocument::fromJson(line);
     QJsonObject jObj = jDoc.object();
     //std::cout << qPrintable(jObj["error"].toString());
     qDebug() << jObj;

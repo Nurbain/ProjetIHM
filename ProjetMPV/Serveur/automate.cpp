@@ -54,6 +54,8 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
         case kSignalChangementVolume:
             mpv_json->changeVolumeOnMPV(params[kParamVolume].toInt());
             break;
+        case kSignalAjoutPlayList:
+            //mpv_json->ajoutPlayListMusique(params[kParamPlayList][0].toString() , params[kParamPlayList][1].toString());
         default:
             return;
     }

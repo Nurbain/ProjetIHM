@@ -33,7 +33,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
+     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/img_fjords.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -42,10 +42,10 @@
    <widget class="QLabel" name="Serveur_MusicAfter">
     <property name="geometry">
      <rect>
-      <x>670</x>
-      <y>110</y>
-      <width>141</width>
-      <height>31</height>
+      <x>630</x>
+      <y>60</y>
+      <width>171</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
@@ -73,7 +73,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
+     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/chevronWd.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -92,7 +92,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
+     <pixmap resource="../Client/ressource.qrc">:/icon/Sprite/chevronWg.png</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -102,9 +102,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
-      <width>201</width>
-      <height>31</height>
+      <y>70</y>
+      <width>221</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -271,7 +271,7 @@ border-bottom-left-radius: 0px;
      <x>0</x>
      <y>0</y>
      <width>831</width>
-     <height>22</height>
+     <height>19</height>
     </rect>
    </property>
   </widget>
@@ -287,7 +287,7 @@ border-bottom-left-radius: 0px;
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="ressource.qrc"/>
+  <include location="../Client/ressource.qrc"/>
  </resources>
  <connections/>
 </ui>

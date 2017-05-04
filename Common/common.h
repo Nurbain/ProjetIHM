@@ -14,6 +14,8 @@ extern const char kParamProgress[];
 extern const char kParamNomPlaylist[];
 extern const char kParamDuration[];
 extern const char kParamTimeChange[];
+extern const char kParamPred[];
+extern const char kParamSuiv[];
 
 extern const char kJsonSignal[];
 extern const char kJsonParams[];
@@ -23,6 +25,7 @@ extern const char kJsonParams[];
 #define CHANGE_DURATION 2
 #define CHANGE_TIMEPOS 3
 #define CHANGE_TITLE 4
+#define CHANGE_PLAYLIST 5
 
 enum signalType {
 	kSignalStart,
@@ -35,7 +38,8 @@ enum signalType {
     kSignalChangementPlaylist,
     kSignalDuration,
     kSignalTimeChange,
-    kSignalProgressChange
+    kSignalProgressChange,
+    kSignalSetVoisin
 };
 
 enum status {

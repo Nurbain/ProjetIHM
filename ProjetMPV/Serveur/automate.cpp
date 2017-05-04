@@ -48,6 +48,7 @@ void Automate::start(bool on){
     mpv_json->obsDuration();
     mpv_json->obsTimeChange();
     mpv_json->obsTitle();
+    mpv_json->obsPlayList();
 
     fonction->setInitialState(pause);
     machine->setInitialState(fonction);
@@ -132,10 +133,28 @@ void Automate::readSocket(){
                     emit signalToUI(kSignalTimeChange,params);
                     break;
                  case CHANGE_TITLE:
-                    qDebug() << jObj;
                     params[kParamNomMusique]=QVariant(jObj["data"].toString());
                     emit signalMachine(kSignalChangementMusique,params);
                     emit signalToUI(kSignalChangementMusique,params);
+                    break;
+                 case CHANGE_PLAYLIST:
+                    qDebug() << jObj;
+                    int i=0;
+                    QJsonArray tmpArray = jObj["data"].toArray();
+                    for(;i<(int)tmpArray.size();i++){
+                        if(tmpArray.at(i).toObject()["current"].toBool())
+                            break;
+                    }
+                    if(i>0)
+                        params[kParamPred]=QVariant(tmpArray[i-1].toObject()["filename"].toString());
+                    else
+                        params[kParamPred]=QVariant("");
+                    if(i<(int)tmpArray.size()-1)
+                        params[kParamSuiv]=QVariant(tmpArray[i+1].toObject()["filename"].toString());
+                    else
+                        params[kParamSuiv]=QVariant("");
+
+                    emit signalToUI(kSignalSetVoisin,params);
                     break;
             }
         }

@@ -6,6 +6,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->Serveur_MusicAfter->setVisible(false);
+    ui->Serveur_MusicBefore->setVisible(false);
+    ui->label->setVisible(false);
+    ui->label1->setVisible(false);
 }
 
 MainWindow::~MainWindow()
@@ -29,6 +33,26 @@ void MainWindow::message(signalType sig, QVariantMap params){
             break;
         case kSignalTimeChange:
             ui->Serveur_MusicAvancement->setText(QString::number((int)(params[kParamTimeChange].toDouble()/60))+":"+QString::number((int)(params[kParamTimeChange].toDouble())%60));
+            break;
+         case kSignalSetVoisin:
+            if(params[kParamPred].toString() != ""){
+                ui->label->setVisible(true);
+                ui->Serveur_MusicBefore->setText(params[kParamPred].toString());
+                ui->Serveur_MusicBefore->setVisible(true);
+            }else{
+                ui->label->setVisible(false);
+                ui->Serveur_MusicBefore->setVisible(false);
+            }
+
+            if(params[kParamSuiv].toString() != ""){
+                ui->label1->setVisible(true);
+                ui->Serveur_MusicAfter->setText(params[kParamSuiv].toString());
+                ui->Serveur_MusicAfter->setVisible(true);
+            }else{
+                ui->label1->setVisible(false);
+                ui->Serveur_MusicAfter->setVisible(false);
+            }
+
             break;
 
     }

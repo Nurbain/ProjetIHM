@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     RecuperationMusique ();
+    RecuperationRadio();
 
     ui->Player_Pause->setVisible(false);
     ui->Player_Muet->setVisible(false);
@@ -128,6 +129,41 @@ void MainWindow::RecuperationMusique ()
 
 }
 
+void MainWindow::RecuperationRadio ()
+{
+     QString selectDir = QDir::currentPath() ;
+     QString path = "/../../Radio";
+     QString Dir= selectDir + path;
+
+     QStringList listFilter;
+     listFilter << "*.m3u";
+
+     QDirIterator dirIterator(Dir, listFilter , QDir::Files);
+     QFileInfoList fileList;
+     QStringList nomFichier;
+
+     int x = 90;
+     int y = 20;
+
+     while(dirIterator.hasNext())
+     {
+
+         // ...on va au prochain fichier correspondant à notre filtre
+         QFileInfo file(dirIterator.next());
+         //fileList << dirIterator.fileInfo();
+         nomFichier << file.fileName();
+         qDebug() << file.fileName();
+
+         QString nom = file.fileName();
+         nom.resize(nom.size()-4);
+         QPushButton *newbtn = new QPushButton (nom, ui->Tab_Radio);
+         newbtn->text() = nom;
+         QObject::connect(newbtn, SIGNAL (clicked(bool)) ,this , SLOT(Radio_clicked()));
+         newbtn->setGeometry(x,y,461,25);
+         y = y+30;
+     }
+}
+
 void MainWindow::Music_clicked()
 {
     QObject * emetteur = sender();
@@ -148,6 +184,15 @@ void MainWindow::PlayList_clicked()
     emit signalFromUI(kSignalChangementPlaylist, params);
 }
 
+void MainWindow::Radio_clicked()
+{
+    QObject * emetteur = sender();
+    QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
+    QString nom = cast->text() + ".m3u";
+    QVariantMap params;
+    params[kParamNomPlaylist]=nom;
+    emit signalFromUI(kSignalChangementPlaylist, params);
+}
 
 //MessageFromClient -> SetUI
 

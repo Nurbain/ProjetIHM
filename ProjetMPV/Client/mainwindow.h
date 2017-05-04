@@ -22,6 +22,7 @@ signals:
 private:
     Ui::MainWindow *ui;
     void RecuperationMusique ();
+    void RecuperationRadio();
     void setPause();
     void setVolume(int value);
     void setConnection();
@@ -33,6 +34,7 @@ private:
 public slots:
     void Music_clicked();
     void PlayList_clicked();
+    void Radio_clicked();
     void messageFromClient(signalType sig, QVariantMap params);
 
 private slots:

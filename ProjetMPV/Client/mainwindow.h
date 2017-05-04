@@ -40,6 +40,8 @@ private slots:
     void on_Player_Muet_clicked();
     void on_Player_MinVol_clicked();
     void on_Param_Esp_clicked();
+    void on_Param_On_clicked();
+    void on_Param_Off_clicked();
 };
 
 #endif // MAINWINDOW_H

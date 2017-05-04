@@ -204,3 +204,18 @@ void MainWindow::on_Player_MinVol_clicked()
     params[kParamVolume]=0;
     emit signalFromUI(kSignalChangementVolume, params);
 }
+
+
+void MainWindow::on_Param_On_clicked()
+{
+    QVariantMap params;
+    params[kParamSwitch]=QVariant(true);
+    emit signalFromUI(kSignalConnectToServer,params);
+}
+
+void MainWindow::on_Param_Off_clicked()
+{
+    QVariantMap params;
+    params[kParamSwitch]=QVariant(false);
+    emit signalFromUI(kSignalConnectToServer,params);
+}

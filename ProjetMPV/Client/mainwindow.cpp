@@ -134,8 +134,8 @@ void MainWindow::on_Param_Esp_clicked()
     ui->BtnMenu_Radio->setText("Radio");
     ui->BtnMenu_Attente->setText("Espera");
     ui->BtnMenu_serveur->setText("Servidor");
-    ui->BtnMenu_Param->setText("Parametre");
-    ui->Param_other->setText("Haute qualité");
+    ui->BtnMenu_Param->setText("Paràmetro");
+    ui->Param_other->setText("Alta calidad");
     ui->Param_Serveur->setText("Servidor");
     ui->Param_Langue->setText("lenga");
 }
@@ -198,5 +198,3 @@ void MainWindow::on_Player_MinVol_clicked()
     params[kParamVolume]=0;
     emit signalFromUI(kSignalChangementVolume, params);
 }
-
-

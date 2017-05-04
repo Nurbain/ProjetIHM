@@ -444,7 +444,8 @@ border : none ;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(130, 130, 130);</string>
+       <string notr="true">color: rgb(130, 130, 130);
+qproperty-alignment : AlignRight;</string>
       </property>
       <property name="text">
        <string>Enceinte</string>
@@ -465,7 +466,8 @@ border : none ;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(130, 130, 130);</string>
+       <string notr="true">color: rgb(130, 130, 130);
+qproperty-alignment : AlignRight;</string>
       </property>
       <property name="text">
        <string>Langue</string>
@@ -499,7 +501,8 @@ border : none ;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(130, 130, 130);</string>
+       <string notr="true">color: rgb(130, 130, 130);
+qproperty-alignment : AlignRight;</string>
       </property>
       <property name="text">
        <string>Haute Qualité</string>

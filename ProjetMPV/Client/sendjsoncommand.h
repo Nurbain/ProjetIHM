@@ -1,3 +1,9 @@
+/* Urbain Nathan & Quentin Wendlig
+ * L3S6 CMI Image
+ * Projet 2 IHM
+ */
+
+
 #ifndef SENDJSONCOMMAND_H
 #define SENDJSONCOMMAND_H
 

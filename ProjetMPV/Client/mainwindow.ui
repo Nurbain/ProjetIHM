@@ -30,7 +30,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="Connect">
      <widget class="QPushButton" name="BtnMenu_Attente">
@@ -397,10 +397,10 @@ border : none ;</string>
        </property>
        <property name="geometry">
         <rect>
-         <x>80</x>
-         <y>60</y>
-         <width>31</width>
-         <height>31</height>
+         <x>46</x>
+         <y>50</y>
+         <width>37</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="styleSheet">
@@ -413,36 +413,6 @@ border : none ;</string>
        <property name="icon">
         <iconset resource="ressource.qrc">
          <normaloff>:/icon/Sprite/RapideAvant.png</normaloff>:/icon/Sprite/RapideAvant.png</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>30</width>
-         <height>30</height>
-        </size>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="Player_recule">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>60</y>
-         <width>31</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: transparent;
-border : none ;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="ressource.qrc">
-         <normaloff>:/icon/Sprite/RapideDerriere.png</normaloff>:/icon/Sprite/RapideDerriere.png</iconset>
        </property>
        <property name="iconSize">
         <size>
@@ -557,38 +527,6 @@ QSlider::handle {
        </property>
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
-       </property>
-      </widget>
-      <widget class="QLabel" name="Player_Next">
-       <property name="geometry">
-        <rect>
-         <x>550</x>
-         <y>35</y>
-         <width>31</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="pixmap">
-        <pixmap resource="ressource.qrc">:/icon/Sprite/Next.png</pixmap>
-       </property>
-       <property name="scaledContents">
-        <bool>true</bool>
-       </property>
-      </widget>
-      <widget class="QLabel" name="Player_Nextmusic">
-       <property name="geometry">
-        <rect>
-         <x>530</x>
-         <y>10</y>
-         <width>71</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Next musique</string>
        </property>
       </widget>
       <widget class="Line" name="line">
@@ -745,13 +683,10 @@ border-bottom-left-radius: 0px;
       <zorder>Player_Play</zorder>
       <zorder>Player_Pause</zorder>
       <zorder>Player_Avance</zorder>
-      <zorder>Player_recule</zorder>
       <zorder>Player_Chanson</zorder>
       <zorder>Player_MaxVol</zorder>
       <zorder>Player_Muet</zorder>
       <zorder>Player_Volume</zorder>
-      <zorder>Player_Next</zorder>
-      <zorder>Player_Nextmusic</zorder>
       <zorder>line</zorder>
       <zorder>Player_MinVol</zorder>
       <zorder>Player_ProgressBar</zorder>

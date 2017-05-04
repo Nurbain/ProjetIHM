@@ -1,3 +1,9 @@
+/* Urbain Nathan & Quentin Wendlig
+ * L3S6 CMI Image
+ * Projet 2 IHM
+ */
+
+
 #ifndef COMMON_H
 #define COMMON_H
 

@@ -1,3 +1,8 @@
+/* Urbain Nathan & Quentin Wendlig
+ * L3S6 CMI Image
+ * Projet 2 IHM
+ */
+
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDirIterator>
@@ -25,7 +30,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+//Fonction Permettant de mettre a jour le CLient
 void MainWindow::messageFromClient(signalType sig, QVariantMap params)
 {
     switch(sig){
@@ -33,7 +38,6 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
             setConnection();
             break;
         case kSignalPause:
-            qDebug() << "PauseEasy";
             setPause();
             break;
         case kSignalChangementMusique:
@@ -47,11 +51,9 @@ void MainWindow::messageFromClient(signalType sig, QVariantMap params)
             setProgress(params[kParamProgress].toInt());
             break;
         case kSignalDuration:
-            qDebug() << "ici";
             setInfoDure(QString::number((int)(params[kParamDuration].toDouble()/60))+":"+QString::number((int)(params[kParamDuration].toDouble())%60));
             break;
         case kSignalTimeChange:
-            qDebug() << "ici2";
             setInfoAdvance(QString::number((int)(params[kParamTimeChange].toDouble()/60))+":"+QString::number((int)(params[kParamTimeChange].toDouble())%60));
             break;
         default:
@@ -68,33 +70,25 @@ void MainWindow::RecuperationMusique ()
     QString selectDir = QDir::currentPath() ;
     QString path = "/../../Musique";
     QString Dir= selectDir + path;
+
     // On remplit une QStringList avec chacun des filtres désirés ici "*.mp3"
     QStringList listFilter;
     listFilter << "*.mp3";
 
-
-    // On déclare un QDirIterator dans lequel on indique que l'on souhaite parcourir un répertoire et ses sous-répertoires.
-    // De plus, on spécifie le filtre qui nous permettra de récupérer uniquement les fichiers du type souhaité.
     QDirIterator dirIterator(Dir, listFilter , QDir::Files);
-    // Variable qui contiendra tous les fichiers correspondant à notre recherche
 
-
-    QStringList nomFichier;
+    //Layout de scrollBar
+    QVBoxLayout *lay = new QVBoxLayout(this);
 
     // Tant qu'on n'est pas arrivé à la fin de l'arborescence...
-
-    QVBoxLayout *lay = new QVBoxLayout(this);
     while(dirIterator.hasNext())
     {
 
         // ...on va au prochain fichier correspondant à notre filtre
         QFileInfo file(dirIterator.next());
-        //fileList << dirIterator.fileInfo();
-        nomFichier << file.fileName();
 
         QString nom = file.fileName();
         nom.resize(nom.size()-4);
-        //QIcon icon = new QIcon);
         QPushButton *newbtn = new QPushButton (nom);
         lay->addWidget(newbtn);
         newbtn->text() = nom;
@@ -103,6 +97,7 @@ void MainWindow::RecuperationMusique ()
     }
     ui->ContentMusique->setLayout(lay);
 
+    //Recupere les playlist sur le meme principe
     QDir dir_path(Dir);
     dir_path.setFilter((QDir::AllDirs));
     QStringList Alldir = dir_path.entryList();
@@ -152,7 +147,6 @@ void MainWindow::RecuperationRadio ()
      listFilter << "*.m3u";
 
      QDirIterator dirIterator(Dir, listFilter , QDir::Files);
-     QStringList nomFichier;
 
 
      QVBoxLayout *lay = new QVBoxLayout(this);
@@ -162,7 +156,6 @@ void MainWindow::RecuperationRadio ()
          // ...on va au prochain fichier correspondant à notre filtre
          QFileInfo file(dirIterator.next());
          //fileList << dirIterator.fileInfo();
-         nomFichier << file.fileName();
 
          QString nom = file.fileName();
          nom.resize(nom.size()-4);
@@ -188,7 +181,6 @@ void MainWindow::PlayList_clicked()
 {
     QObject * emetteur = sender();
     QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
-    qDebug() << cast->text();;
     QVariantMap params;
     params[kParamNomPlaylist]=cast->text();
     emit signalFromUI(kSignalChangementPlaylist, params);
@@ -199,13 +191,13 @@ void MainWindow::Radio_clicked()
     QObject * emetteur = sender();
     QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
     QString nom = "../Radio/"+ cast->text() + ".m3u";
-    qDebug() << nom;
     QVariantMap params;
     params[kParamNomPlaylist]=nom;
     emit signalFromUI(kSignalChangementPlaylist, params);
 }
 
-//MessageFromClient -> SetUI
+
+//MessageFromClient -> SetUI , met  ajour le client
 
 void MainWindow::setPause()
 {
@@ -274,11 +266,11 @@ void MainWindow::setInfoAdvance(QString temps)
 }
 
 
+
+//Click de bouton envoyant ou non les signals adéquate
+
 void MainWindow::on_Player_Pause_clicked()
 {
-    /*ui->Player_Pause->setVisible(false);
-    ui->Player_Play->setVisible(true);*/
-    qDebug() << "pause";
     QVariantMap params;
     params[kParamSwitch]=false;
     emit signalFromUI(kSignalPause, params);
@@ -286,13 +278,11 @@ void MainWindow::on_Player_Pause_clicked()
 
 void MainWindow::on_Player_Play_clicked()
 {
-    /*ui->Player_Pause->setVisible(true);
-    ui->Player_Play->setVisible(false);*/
-    qDebug() << "play";
     QVariantMap params;
     params[kParamSwitch]=true;
     emit signalFromUI(kSignalPause, params);
 }
+
 
 void MainWindow::on_Param_Eng_clicked()
 {

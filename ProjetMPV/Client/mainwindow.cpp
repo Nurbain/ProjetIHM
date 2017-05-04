@@ -81,9 +81,9 @@ void MainWindow::on_Player_Pause_clicked()
 {
     ui->Player_Pause->setVisible(false);
     ui->Player_Play->setVisible(true);
-    qDebug() << "play";
+    qDebug() << "pause";
     QVariantMap params;
-    params[kParamSwitch]=true;
+    params[kParamSwitch]=false;
     emit signalFromUI(kSignalPause, params);
 }
 
@@ -93,6 +93,11 @@ void MainWindow::on_Player_Play_clicked()
     ui->Player_Play->setVisible(false);
     qDebug() << "play";
     QVariantMap params;
-    params[kParamSwitch]=false;
+    params[kParamSwitch]=true;
     emit signalFromUI(kSignalPause, params);
+}
+
+void MainWindow::on_Player_Avance_clicked()
+{
+
 }

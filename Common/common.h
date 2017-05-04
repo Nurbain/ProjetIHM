@@ -33,7 +33,8 @@ enum signalType {
     kSignalProgress,
     kSignalChangementPlaylist,
     kSignalDuration,
-    kSignalTimeChange
+    kSignalTimeChange,
+    kSignalProgressChange
 };
 
 enum status {

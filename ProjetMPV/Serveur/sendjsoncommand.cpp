@@ -269,6 +269,19 @@ void SendJSONCommand::obsTimeChange(){
     SendJSONCommand::sendRequestToMPV(jsonObject);
 }
 
+void SendJSONCommand::setProgress(int newProgress){
+    QJsonObject jsonObject;
+    QJsonArray jsonArr;
+
+    // Creating the JSON message
+    jsonArr.append("set_property");
+    jsonArr.append("percent-pos");
+    jsonArr.append(newProgress);
+
+    jsonObject["command"]=jsonArr;
+
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+}
 
 
 

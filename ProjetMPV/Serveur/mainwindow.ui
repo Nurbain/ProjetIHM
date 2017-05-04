@@ -170,8 +170,11 @@ border-bottom-left-radius: 0px;
 
 </string>
     </property>
+    <property name="singleStep">
+     <number>1</number>
+    </property>
     <property name="value">
-     <number>44</number>
+     <number>0</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>

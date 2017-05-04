@@ -72,9 +72,12 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             emit signalMachine(kSignalChangementVolume,params);
             break;
         case kSignalChangementPlaylist:
-            qDebug("Ouais c'est bon c'est bind");
             currentPlaylist=params[kParamNomPlaylist].toString();
             emit signalChangementPlaylist();
+            break;
+        case kSignalProgressChange:
+            qDebug() << params[kParamProgress].toInt();
+            mpv_json->setProgress(params[kParamProgress].toInt());
             break;
         default:
             return;

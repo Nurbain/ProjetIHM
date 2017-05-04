@@ -26,6 +26,7 @@ private:
     void setVolume(int value);
     void setConnection();
     void setProgress(int value);
+    bool canModif=true;
 
 public slots:
     void Music_clicked();
@@ -50,6 +51,8 @@ private slots:
     void on_Param_On_clicked();
     void on_Param_Off_clicked();
     void on_pushButton_2_clicked();
+    void onReleaseProgress();
+    void on_Player_ProgressBar_sliderPressed();
 };
 
 #endif // MAINWINDOW_H

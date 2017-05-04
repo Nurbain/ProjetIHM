@@ -1499,5 +1499,25 @@ qproperty-alignment : AlignRight;</string>
  <resources>
   <include location="ressource.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>Player_ProgressBar</sender>
+   <signal>sliderReleased()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onReleaseProgress()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>565</x>
+     <y>103</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>426</x>
+     <y>255</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onReleaseProgress()</slot>
+ </slots>
 </ui>

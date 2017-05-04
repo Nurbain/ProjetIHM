@@ -190,7 +190,8 @@ void MainWindow::setConnection()
 
 void MainWindow::setProgress(int value)
 {
-    ui->Player_ProgressBar->setValue(value);
+    if(canModif)
+        ui->Player_ProgressBar->setValue(value);
 }
 
 void MainWindow::on_Player_Pause_clicked()
@@ -339,4 +340,16 @@ void MainWindow::on_pushButton_2_clicked()
     ui->Param_On->setChecked(true);
     ui->Param_Off->setChecked(false);
     ui->Panel->setCurrentIndex(0);
+}
+
+void MainWindow::onReleaseProgress(){
+    QVariantMap params;
+    params[kParamProgress]=QVariant(ui->Player_ProgressBar->value());
+    emit signalFromUI(kSignalProgressChange,params);
+    canModif=true;
+}
+
+void MainWindow::on_Player_ProgressBar_sliderPressed()
+{
+    canModif=false;
 }

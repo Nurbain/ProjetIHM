@@ -63,6 +63,7 @@ void Client::messageFromUI(signalType sig, QVariantMap params) {
 }
 
 
+
 void Client::serverMessageLoop() {
   while (m_running){
       QDataStream in(m_socket);

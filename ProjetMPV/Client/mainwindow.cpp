@@ -22,6 +22,27 @@ MainWindow::~MainWindow()
 }
 
 
+void MainWindow::messageFromClient(signalType sig, QVariantMap params)
+{
+    switch(sig){
+        case kSignalStart:
+
+            break;
+        case kSignalPause:
+            setPause();
+            break;
+        case kSignalChangementMusique:
+
+            break;
+        case kSignalChangementVolume:
+
+            break;
+
+        default:
+            return;
+    }
+}
+
 
 // On sélectionne le répertoire à partir duquel on va rechercher les fichiers MP3
 void MainWindow::RecuperationMusique ()
@@ -113,6 +134,18 @@ void MainWindow::Music_clicked()
 }
 
 void MainWindow::PlayList_clicked()
+{
+    QObject * emetteur = sender();
+    QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
+    qDebug() << cast->text();;
+    QVariantMap params;
+    params[kParamNomPlaylist]=cast->text();
+    emit signalFromUI(kSignalChangementPlaylist, params);
+}
+
+
+
+void MainWindow::setPause()
 {
 
 }

@@ -22,10 +22,12 @@ signals:
 private:
     Ui::MainWindow *ui;
     void RecuperationMusique ();
+    void setPause();
 
 public slots:
     void Music_clicked();
     void PlayList_clicked();
+    void messageFromClient(signalType sig, QVariantMap params);
 
 private slots:
     void on_Player_Play_clicked();

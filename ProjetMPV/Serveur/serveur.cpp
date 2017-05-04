@@ -102,26 +102,11 @@ void Serveur::clientMessageLoop() {
             }
             QString str=QString(in.device()->readLine());
             if(str=="") continue;
-            qDebug() << i;
-            qDebug(" On a un truc");
             QByteArray a=str.toUtf8();
             QJsonParseError error;
             QJsonDocument jDoc=QJsonDocument::fromJson(a,&error);
             QJsonObject jsonObject=jDoc.object();
             emit signalFromServer((signalType)jsonObject[kJsonSignal].toInt(), jsonObject[kJsonParams].toObject().toVariantMap());
         }
-        /*QDataStream in(m_client);
-        if(in.atEnd()){
-            QThread::msleep(100);
-            continue;
-        }
-        QString str=QString(in.device()->readLine());
-        if(str=="") continue;
-        QByteArray a=str.toUtf8();
-        QJsonParseError error;
-        QJsonDocument jDoc=QJsonDocument::fromJson(a,&error);
-        QJsonObject jsonObject=jDoc.object();
-        emit signalFromServer((signalType)jsonObject[kJsonSignal].toInt(), jsonObject[kJsonParams].toObject().toVariantMap());
-        */
     }
 }

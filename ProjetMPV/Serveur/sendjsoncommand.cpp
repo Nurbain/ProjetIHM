@@ -269,6 +269,19 @@ void SendJSONCommand::obsTimeChange(){
     SendJSONCommand::sendRequestToMPV(jsonObject);
 }
 
+
+void SendJSONCommand::obsTitle(){
+    QJsonArray jsonArr;
+     QJsonObject jsonObject;
+    // Creating the JSON message
+    jsonArr.append("observe_property");
+    jsonArr.append(CHANGE_TITLE);
+    jsonArr.append("media-title");
+    jsonObject["command"]=jsonArr;
+    SendJSONCommand::sendRequestToMPV(jsonObject);
+}
+
+
 void SendJSONCommand::setProgress(int newProgress){
     QJsonObject jsonObject;
     QJsonArray jsonArr;

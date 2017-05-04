@@ -22,6 +22,7 @@ extern const char kJsonParams[];
 #define CHANGE_PROGRESS_PERCENT 1
 #define CHANGE_DURATION 2
 #define CHANGE_TIMEPOS 3
+#define CHANGE_TITLE 4
 
 enum signalType {
 	kSignalStart,

@@ -47,6 +47,7 @@ void Automate::start(bool on){
     mpv_json->obsProgress();
     mpv_json->obsDuration();
     mpv_json->obsTimeChange();
+    mpv_json->obsTitle();
 
     fonction->setInitialState(pause);
     machine->setInitialState(fonction);
@@ -129,6 +130,12 @@ void Automate::readSocket(){
                 case CHANGE_TIMEPOS:
                     params[kParamTimeChange]=QVariant(jObj["data"].toDouble());
                     emit signalToUI(kSignalTimeChange,params);
+                    break;
+                 case CHANGE_TITLE:
+                    qDebug() << jObj;
+                    params[kParamNomMusique]=QVariant(jObj["data"].toString());
+                    emit signalMachine(kSignalChangementMusique,params);
+                    emit signalToUI(kSignalChangementMusique,params);
                     break;
             }
         }

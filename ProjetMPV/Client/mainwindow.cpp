@@ -126,6 +126,21 @@ void MainWindow::on_Param_Fr_clicked()
     ui->Param_Langue->setText("Langue");
 }
 
+void MainWindow::on_Param_Esp_clicked()
+{
+    //Menu
+    ui->BtnMenu_Music->setText("Mùsica");
+    ui->BtnMenu_Play->setText("PlayList");
+    ui->BtnMenu_Radio->setText("Radio");
+    ui->BtnMenu_Attente->setText("Espera");
+    ui->BtnMenu_serveur->setText("Servidor");
+    ui->BtnMenu_Param->setText("Parametre");
+    ui->Param_other->setText("Haute qualité");
+    ui->Param_Serveur->setText("Servidor");
+    ui->Param_Langue->setText("lenga");
+}
+
+
 void MainWindow::on_BtnMenu_Music_clicked()
 {
     ui->TabInteraction->setCurrentIndex(0);
@@ -167,6 +182,8 @@ void MainWindow::on_Player_Volume_valueChanged(int value)
 
 void MainWindow::on_Player_Muet_clicked()
 {
+    ui->Player_Muet->setVisible(false);
+    ui->Player_MinVol->setVisible(true);
     int value = ui->Player_Volume->value();
     QVariantMap params;
     params[kParamVolume]=value;
@@ -175,7 +192,11 @@ void MainWindow::on_Player_Muet_clicked()
 
 void MainWindow::on_Player_MinVol_clicked()
 {
+    ui->Player_Muet->setVisible(true);
+    ui->Player_MinVol->setVisible(false);
     QVariantMap params;
     params[kParamVolume]=0;
     emit signalFromUI(kSignalChangementVolume, params);
 }
+
+

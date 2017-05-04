@@ -10,6 +10,19 @@ Automate::Automate(QObject *parent) : QObject(parent)
     play=new QState(fonction);
     pause=new QState(fonction);
     changement=new QState(fonction);
+    playPlaylist=new QState(fonction);
+    pausePlaylist=new QState(fonction);
+    changementPlaylist=new QState(fonction);
+
+    dePlayPlaylist=playPlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
+    dePlayPlaylist=playPlaylist->addTransition(this,SIGNAL(signalPausePlaylist()),pausePlaylist);
+
+    dePausePlaylist=pausePlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),changementPlaylist);
+    dePausePlaylist=pausePlaylist->addTransition(this,SIGNAL(signalPausePlaylist()),playPlaylist);
+
+    deChangementPlaylist=changementPlaylist->addTransition(this,SIGNAL(signalChangementPlaylist()),playPlaylist);
+
+
 
     dePlay=play->addTransition(this,SIGNAL(signalPause()),pause);
     dePlay=play->addTransition(this,SIGNAL(signalChangement()),changement);

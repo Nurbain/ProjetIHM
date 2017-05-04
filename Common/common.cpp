@@ -9,6 +9,7 @@ const char kParams[]="params";
 const char kParamSwitch[]="switch";
 const char kParamStatus[]="status";
 const char kParamMessage[]="message";
+const char kParamNomMusique[]="NomMusique";
 
 const char kJsonSignal[]="signal";
 const char kJsonParams[]="params";

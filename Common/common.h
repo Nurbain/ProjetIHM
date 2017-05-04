@@ -17,7 +17,8 @@ enum signalType {
 	kSignalStart,
     kSignalPause,
     kSignalStatusMessage,
-    kSignalConnectToServer
+    kSignalConnectToServer,
+    kSignalChangementMusique
 };
 
 enum status {

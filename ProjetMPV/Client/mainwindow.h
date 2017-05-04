@@ -25,6 +25,9 @@ private:
 
 public slots:
     void Music_clicked();
+private slots:
+    void on_Player_Play_clicked();
+    void on_Player_Pause_clicked();
 };
 
 #endif // MAINWINDOW_H

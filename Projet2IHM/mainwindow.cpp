@@ -58,11 +58,6 @@ void MainWindow::on_Player_Pause_clicked()
     ui->Player_Play->setVisible(true);
 }
 
-void MainWindow::on_Player_Play_clicked()
-{
-    ui->Player_Pause->setVisible(true);
-    ui->Player_Play->setVisible(false);
-}
 
 void MainWindow::on_Player_Muet_clicked()
 {

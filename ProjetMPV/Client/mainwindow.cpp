@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     RecuperationMusique ();
+
+    ui->Player_Pause->setVisible(false);
 }
 
 MainWindow::~MainWindow()
@@ -17,16 +19,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::Music_clicked()
-{
-    QObject * emetteur = sender();
-    QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
-    qDebug() << cast->text();;
-    QVariantMap params;
-    params[kParamNomMusique]=cast->text();
-    emit signalFromUI(kSignalChangementMusique, params);
-}
 
 
 // On sélectionne le répertoire à partir duquel on va rechercher les fichiers MP3
@@ -71,4 +63,36 @@ void MainWindow::RecuperationMusique ()
 
     qDebug() << "la2";
 
+}
+
+
+void MainWindow::Music_clicked()
+{
+    QObject * emetteur = sender();
+    QPushButton * cast = qobject_cast<QPushButton*>(emetteur);
+    qDebug() << cast->text();;
+    QVariantMap params;
+    params[kParamNomMusique]=cast->text();
+    emit signalFromUI(kSignalChangementMusique, params);
+}
+
+
+void MainWindow::on_Player_Pause_clicked()
+{
+    ui->Player_Pause->setVisible(false);
+    ui->Player_Play->setVisible(true);
+    qDebug() << "play";
+    QVariantMap params;
+    params[kParamSwitch]=true;
+    emit signalFromUI(kSignalPause, params);
+}
+
+void MainWindow::on_Player_Play_clicked()
+{
+    ui->Player_Pause->setVisible(true);
+    ui->Player_Play->setVisible(false);
+    qDebug() << "play";
+    QVariantMap params;
+    params[kParamSwitch]=false;
+    emit signalFromUI(kSignalPause, params);
 }

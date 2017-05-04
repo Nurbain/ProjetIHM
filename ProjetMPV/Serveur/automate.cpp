@@ -71,7 +71,6 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             emit signalMachine(kSignalPause,params);
             break;
         case kSignalChangementMusique:
-            qDebug("On change");
             currentMusique=params[kParamNomMusique].toString();
             emit signalChangement();
             break;
@@ -84,7 +83,6 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
             emit signalChangementPlaylist();
             break;
         case kSignalProgressChange:
-            qDebug() << params[kParamProgress].toInt();
             mpv_json->setProgress(params[kParamProgress].toInt());
             break;
         case kSignalSpeedUp:
@@ -96,7 +94,15 @@ void Automate::messageFromServer(signalType sig, QVariantMap params){
 }
 
 void Automate::speedMusique(){
+    if(isSpeed){
+        mpv_json->changeSpeedOnMPV(1);
+        isSpeed=false;
+        emit signalSpeed();
+        return;
+    }
     mpv_json->changeSpeedOnMPV(2);
+    isSpeed=true;
+    emit signalSpeed();
 }
 
 void Automate::changementMusique(){
@@ -111,7 +117,6 @@ void Automate::changementPlaylistFct(){
 
 void Automate::playMusique(){
     mpv_json->setPauseOnMPV(false);
-    mpv_json->changeSpeedOnMPV(1);
 }
 
 void Automate::pauseMusique(){

@@ -43,6 +43,8 @@ private:
     QString currentMusique;
     QString currentPlaylist;
 
+    bool isSpeed=false;
+
 
 signals:
 

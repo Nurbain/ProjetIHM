@@ -8,6 +8,7 @@ extern const char kParamSwitch[];
 extern const char kParamStatus[];
 extern const char kParamMessage[];
 extern const char kParamNomMusique[];
+extern const char kParamVolume[];
 
 extern const char kJsonSignal[];
 extern const char kJsonParams[];
@@ -19,7 +20,8 @@ enum signalType {
     kSignalPause,
     kSignalStatusMessage,
     kSignalConnectToServer,
-    kSignalChangementMusique
+    kSignalChangementMusique,
+    kSignalChangementVolume
 };
 
 enum status {

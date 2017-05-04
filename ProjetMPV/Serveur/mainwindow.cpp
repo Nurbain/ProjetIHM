@@ -12,3 +12,16 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+void MainWindow::message(signalType sig, QVariantMap params){
+
+    switch(sig){
+        case kSignalChangementMusique:
+            qDebug("Modif IHM");
+            ui->Serveur_MusicNow->setText(params[kParamNomMusique].toString());
+        break;
+    }
+
+
+}

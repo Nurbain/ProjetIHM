@@ -48,6 +48,10 @@ void Client::messageFromUI(signalType sig, QVariantMap params) {
       if(m_socket==NULL) return;
       sendRequestToSocket(m_socket,kSignalChangementMusique,params);
       break;
+    case kSignalPause:
+      sendRequestToSocket(m_socket,kSignalPause,params);
+    case kSignalChangementVolume:
+      sendRequestToSocket(m_socket,kSignalChangementVolume,params);
     default:
       break;
     }

@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
 
     QObject::connect(&automate,SIGNAL(signalMachine(signalType,QVariantMap)),&server,SLOT(message(signalType,QVariantMap)));
     QObject::connect(&server,SIGNAL(signalFromServer(signalType,QVariantMap)),&automate,SLOT(messageFromServer(signalType,QVariantMap)));
+    QObject::connect(&server, SIGNAL(signalFromServer(signalType,QVariantMap)), &w, SLOT(message(signalType,QVariantMap)));
+
 
     server.startServer(true);
 

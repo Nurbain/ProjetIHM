@@ -49,6 +49,7 @@ public slots:
     void start(bool);
     void changementMusique();
     void playMusique();
+    void pauseMusique();
 
 };
 

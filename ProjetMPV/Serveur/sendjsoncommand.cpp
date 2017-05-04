@@ -1,4 +1,7 @@
 #include "sendjsoncommand.h"
+#include <iostream>
+
+using namespace std;
 
 SendJSONCommand::SendJSONCommand(QObject *parent) :
     QObject(parent),
@@ -37,6 +40,7 @@ void SendJSONCommand::sendRequestToMPV(QJsonObject msg)
 {
     // Converting the JSON msg into bytes msg
     QByteArray bytes = QJsonDocument(msg).toJson(QJsonDocument::Compact)+"\n";
+
     if(mpv!=NULL)
     {
         mpv->write(bytes.data(), bytes.length());
@@ -170,6 +174,7 @@ void SendJSONCommand::getVolumeFromMPV()
     jsonArr.append("volume");
 
     jsonObject["command"]=jsonArr;
+    qDebug() << jsonObject;
 
     SendJSONCommand::sendRequestToMPV(jsonObject);
 
@@ -181,8 +186,20 @@ void SendJSONCommand::getVolumeFromMPV()
     QJsonParseError error;
     QJsonDocument jDoc = QJsonDocument::fromJson(line, &error);
     QJsonObject jObj = jDoc.object();
-    qDebug() << jObj["data"].toString();
-    qDebug() << jObj["error"].toString();
+    //std::cout << qPrintable(jObj["error"].toString());
+    qDebug() << jObj;
+}
+
+
+void SendJSONCommand::obsProgress(){
+    QJsonArray jsonArr;
+     QJsonObject jsonObject;
+    // Creating the JSON message
+    jsonArr.append("observe_property");
+    jsonArr.append(1);
+    jsonArr.append("percent-pos");
+    jsonObject["command"]=jsonArr;
+    SendJSONCommand::sendRequestToMPV(jsonObject);
 }
 
 

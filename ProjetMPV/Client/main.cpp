@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 
     params[kParamNomMusique]="../Musique/vexento-busy-mind.mp3";
 
-    c.messageFromUI(kSignalChangementMusique,params);
+    //c.messageFromUI(kSignalChangementMusique,params);
 
 
     return a.exec();

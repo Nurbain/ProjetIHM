@@ -65,7 +65,6 @@ private slots:
     void on_pushButton_2_clicked();
     void onReleaseProgress();
     void on_Player_ProgressBar_sliderPressed();
-    void on_Player_Avance_clicked();
 };
 
 #endif // MAINWINDOW_H

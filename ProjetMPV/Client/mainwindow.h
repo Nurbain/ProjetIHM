@@ -37,6 +37,8 @@ private slots:
     void on_BtnMenu_Param_clicked();
     void on_Param_Fr_clicked();
     void on_Player_Volume_valueChanged(int value);
+    void on_Player_Muet_clicked();
+    void on_Player_MinVol_clicked();
 };
 
 #endif // MAINWINDOW_H

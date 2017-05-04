@@ -167,6 +167,14 @@ void MainWindow::on_Player_Volume_valueChanged(int value)
 
 void MainWindow::on_Player_Muet_clicked()
 {
+    int value = ui->Player_Volume->value();
+    QVariantMap params;
+    params[kParamVolume]=value;
+    emit signalFromUI(kSignalChangementVolume, params);
+}
+
+void MainWindow::on_Player_MinVol_clicked()
+{
     QVariantMap params;
     params[kParamVolume]=0;
     emit signalFromUI(kSignalChangementVolume, params);
